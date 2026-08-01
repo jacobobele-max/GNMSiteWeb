@@ -21,7 +21,7 @@ import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
-import { DEVIS_URL } from "@/lib/constants";
+import { DEVIS_URL, SITE_URL } from "@/lib/constants";
 import hero2 from "@/assets/hero-2.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
@@ -229,7 +229,7 @@ export default function ExpertisePage() {
         content:
           "Expertise métier, innovations technologiques et engagement éco-responsable : la signature Gabon Nettoyage & Multiservices.",
       },
-      { property: "og:image", content: hero2 },
+      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
     ],
   });
 

@@ -19,6 +19,7 @@ import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { useI18n, type Lang } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
+import { SITE_URL } from "@/lib/constants";
 import { articles, getArticleBySlug } from "@/lib/articles";
 
 export default function ActualiteDetailRoute() {
@@ -79,10 +80,10 @@ function ArticleDetailPage({
       { name: "description", content: article.excerpt.fr },
       { property: "og:title", content: article.title.fr },
       { property: "og:description", content: article.excerpt.fr },
-      { property: "og:image", content: article.cover },
+      { property: "og:image", content: `${SITE_URL}${article.cover}` },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: article.cover },
+      { name: "twitter:image", content: `${SITE_URL}${article.cover}` },
     ],
   });
 

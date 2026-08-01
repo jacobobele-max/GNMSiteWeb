@@ -87,6 +87,25 @@ async function main() {
     results.push({ route, outFile, sizeBytes: Buffer.byteLength(html, "utf-8") });
   }
 
+  // Page 404 dédiée : rendue depuis une route inexistante (tombe sur le
+  // catch-all "*" du routeur), servie ensuite par l'hébergeur via
+  // ErrorDocument 404 /404.html (voir public/.htaccess).
+  console.log("  · Rendu de la page 404 ...");
+  const notFoundPage = await browser.newPage();
+  await notFoundPage.goto(`${baseUrl}/404-introuvable`, {
+    waitUntil: "networkidle0",
+    timeout: 30000,
+  });
+  await new Promise((r) => setTimeout(r, 500));
+  const notFoundHtml = await notFoundPage.content();
+  await notFoundPage.close();
+  fs.writeFileSync(path.join("dist", "404.html"), notFoundHtml, "utf-8");
+  results.push({
+    route: "/404.html",
+    outFile: "dist/404.html",
+    sizeBytes: Buffer.byteLength(notFoundHtml, "utf-8"),
+  });
+
   await browser.close();
   server.httpServer.close();
 
@@ -94,7 +113,8 @@ async function main() {
   let hasWarning = false;
   for (const { route, outFile, sizeBytes } of results) {
     const ko = (sizeBytes / 1024).toFixed(1);
-    const ok = sizeBytes >= MIN_SIZE_BYTES;
+    // La page 404 est volontairement minimale : elle n'est pas soumise au seuil.
+    const ok = route === "/404.html" || sizeBytes >= MIN_SIZE_BYTES;
     if (!ok) hasWarning = true;
     console.log(`  ${ok ? "✔" : "⚠"} ${route.padEnd(40)} ${outFile} (${ko} Ko)`);
   }

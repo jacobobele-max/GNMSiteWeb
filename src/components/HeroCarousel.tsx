@@ -57,9 +57,15 @@ export function HeroCarousel() {
                     <span className="size-1.5 rounded-full bg-brand-green-deep" />
                     {t(s.keys.eyebrow)}
                   </span>
-                  <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
-                    {t(s.keys.title)}
-                  </h1>
+                  {i === 0 ? (
+                    <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
+                      {t(s.keys.title)}
+                    </h1>
+                  ) : (
+                    <h2 className="mt-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
+                      {t(s.keys.title)}
+                    </h2>
+                  )}
                   <p className="mt-6 max-w-xl text-lg text-white/90 md:text-xl">
                     {t(s.keys.subtitle)}
                   </p>
