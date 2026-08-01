@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vite *)",
+      "Bash(node prerender.js)",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(npx prettier *)",
+      "Bash(chromium-cli --help)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:5173/ >/dev/null 2>&1; do sleep 1; done')",
+      "Bash(curl -s http://localhost:5173/)",
+      "Read(//tmp/**)",
+      "Bash(node \"C:\\\\Users\\\\hp\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-hp-Documents-GNMSiteWeb\\\\6fc855a5-6079-4346-8d24-cced8a6936ae\\\\scratchpad\\\\smoke-test.js\")",
+      "Bash(node _smoke-test.mjs)",
+      "Bash(rm -f _smoke-test.mjs _smoke-test2.mjs)",
+      "Bash(lsof -ti:5173 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(node _smoke-test3.mjs)",
+      "Bash(curl -s -o /dev/null -w \"gabonnettoyage.net → HTTP %{http_code}\\\\n\" https://gabonnettoyage.net/)",
+      "Bash(curl -s https://gabonnettoyage.net/)",
+      "Bash(curl -s -o /dev/null -w \"gabonnettoyage.net/nettoyage/libreville → HTTP %{http_code}\\\\n\" https://gabonnettoyage.net/nettoyage/libreville)",
+      "Bash(curl -s https://gabonnettoyage.net/nettoyage/libreville)",
+      "Bash(curl -s -o /dev/null -w \"sitemap.xml → HTTP %{http_code}\\\\n\" https://gabonnettoyage.net/sitemap.xml)",
+      "Bash(curl -s -o /dev/null -w \"robots.txt → HTTP %{http_code}\\\\n\" https://gabonnettoyage.net/robots.txt)",
+      "Bash(curl -s -L -o /dev/null -w \"final URL: %{url_effective}  HTTP: %{http_code}\\\\n\" https://gabonnettoyage.net/nettoyage/libreville)",
+      "Bash(curl -s -I https://gabonnettoyage.net/nettoyage/libreville)",
+      "Bash(curl -s -L https://gabonnettoyage.net/nettoyage/libreville)"
+    ]
+  }
+}
