@@ -157,7 +157,7 @@ export function Navbar({ transparent = true }: NavbarProps) {
             asChild
             className="hidden rounded-full bg-brand-green px-5 text-primary-foreground shadow-brand hover:bg-brand-green-deep md:inline-flex"
           >
-            <a href="#espace-client">{t("cta.client")}</a>
+            <Link to="/contact">{t("cta.client")}</Link>
           </Button>
 
           <button
@@ -224,19 +224,23 @@ export function Navbar({ transparent = true }: NavbarProps) {
               const sub = mobileSub === item.key;
               return (
                 <li key={item.key} className="border-b border-border/60 last:border-0">
-                  <button
-                    className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-foreground"
-                    onClick={() => {
-                      if (hasChildren) setMobileSub(sub ? null : item.key);
-                      else {
-                        setOpen(false);
-                        window.location.hash = item.href.replace("#", "");
-                      }
-                    }}
-                  >
-                    {t(item.key)}
-                    {hasChildren && <ChevronDown size={16} className={sub ? "rotate-180" : ""} />}
-                  </button>
+                  {hasChildren ? (
+                    <button
+                      className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-foreground"
+                      onClick={() => setMobileSub(sub ? null : item.key)}
+                    >
+                      {t(item.key)}
+                      <ChevronDown size={16} className={sub ? "rotate-180" : ""} />
+                    </button>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-foreground"
+                      onClick={() => setOpen(false)}
+                    >
+                      {t(item.key)}
+                    </Link>
+                  )}
                   {hasChildren && sub && (
                     <div className="mb-3 ml-3 flex flex-col gap-3 border-l border-border/60 pl-3">
                       {item.simple?.map((c) => (
@@ -278,9 +282,9 @@ export function Navbar({ transparent = true }: NavbarProps) {
               asChild
               className="my-3 rounded-full bg-brand-green text-primary-foreground hover:bg-brand-green-deep"
             >
-              <a href="#espace-client" onClick={() => setOpen(false)}>
+              <Link to="/contact" onClick={() => setOpen(false)}>
                 {t("cta.client")}
-              </a>
+              </Link>
             </Button>
           </ul>
         </div>

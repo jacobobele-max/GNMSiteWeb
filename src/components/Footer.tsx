@@ -60,11 +60,16 @@ export function Footer() {
               Navigation
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/80">
-              {["Accueil", "Nos services", "À propos", "Contact"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="transition-colors hover:text-brand-yellow">
-                    {l}
-                  </a>
+              {[
+                { label: "Accueil", href: "/" },
+                { label: "Nos services", href: "/services" },
+                { label: "À propos", href: "/a-propos" },
+                { label: "Contact", href: "/contact" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link to={l.href} className="transition-colors hover:text-brand-yellow">
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -83,9 +88,9 @@ export function Footer() {
                 "Manutention",
               ].map((l) => (
                 <li key={l}>
-                  <a href="#services" className="transition-colors hover:text-brand-yellow">
+                  <Link to="/services" className="transition-colors hover:text-brand-yellow">
                     {l}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

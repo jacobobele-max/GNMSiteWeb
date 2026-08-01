@@ -9,7 +9,6 @@ import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { LanguageProvider } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 
 export default function Index() {
@@ -30,20 +29,18 @@ export default function Index() {
   });
 
   return (
-    <LanguageProvider>
-      <main className="min-h-screen bg-background">
-        <Navbar />
-        <SocialFloat />
-        <HeroCarousel />
-        <TrustedBy />
-        <Services />
-        <Philosophy />
-        <Gallery />
-        <Testimonials />
-        <Footer />
-        <QuoteChatbot />
-        <WhatsAppFloat />
-      </main>
-    </LanguageProvider>
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      <SocialFloat />
+      <HeroCarousel />
+      <TrustedBy />
+      <Services />
+      <Philosophy />
+      <Gallery />
+      <Testimonials />
+      <Footer />
+      <QuoteChatbot />
+      <WhatsAppFloat />
+    </main>
   );
 }

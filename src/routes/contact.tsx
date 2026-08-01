@@ -7,17 +7,9 @@ import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { LanguageProvider, useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { toast } from "sonner";
-
-export default function ContactRoute() {
-  return (
-    <LanguageProvider>
-      <ContactPage />
-    </LanguageProvider>
-  );
-}
 
 const schema = z.object({
   name: z.string().trim().min(2, "Nom trop court").max(100),
@@ -25,7 +17,7 @@ const schema = z.object({
   message: z.string().trim().min(5, "Message trop court").max(1500),
 });
 
-function ContactPage() {
+export default function ContactPage() {
   const { t } = useI18n();
 
   useDocumentHead({

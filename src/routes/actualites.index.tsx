@@ -6,17 +6,9 @@ import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { LanguageProvider, useI18n, type Lang } from "@/lib/i18n";
+import { useI18n, type Lang } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { articles } from "@/lib/articles";
-
-export default function ActualitesIndexRoute() {
-  return (
-    <LanguageProvider>
-      <ActualitesPage />
-    </LanguageProvider>
-  );
-}
 
 const categories: { key: string; label: { fr: string; en: string } }[] = [
   { key: "all", label: { fr: "Tous", en: "All" } },
@@ -36,7 +28,7 @@ function formatDate(iso: string, lang: Lang) {
   });
 }
 
-function ActualitesPage() {
+export default function ActualitesPage() {
   const { t, lang } = useI18n();
 
   useDocumentHead({

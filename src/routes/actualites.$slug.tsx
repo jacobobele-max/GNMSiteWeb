@@ -17,7 +17,7 @@ import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { LanguageProvider, useI18n, type Lang } from "@/lib/i18n";
+import { useI18n, type Lang } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { articles, getArticleBySlug } from "@/lib/articles";
 
@@ -25,11 +25,7 @@ export default function ActualiteDetailRoute() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
 
-  return (
-    <LanguageProvider>
-      {article ? <ArticleDetailPage article={article} /> : <NotFoundArticle />}
-    </LanguageProvider>
-  );
+  return article ? <ArticleDetailPage article={article} /> : <NotFoundArticle />;
 }
 
 function formatDate(iso: string, lang: Lang) {

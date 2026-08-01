@@ -7,22 +7,14 @@ import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { LanguageProvider, useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
 import { categories, allServices, type Service, type Category } from "@/lib/services-catalog";
 
 type ActiveService = (Service & { category: Category }) | null;
 
-export default function ServicesRoute() {
-  return (
-    <LanguageProvider>
-      <ServicesPage />
-    </LanguageProvider>
-  );
-}
-
-function ServicesPage() {
+export default function ServicesPage() {
   useDocumentHead({
     title: "Tous nos services — Gabon Nettoyage & Multiservices",
     meta: [

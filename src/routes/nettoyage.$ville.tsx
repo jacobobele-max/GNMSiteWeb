@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { LanguageProvider, useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
 import { getCityBySlug, type CityContent } from "@/lib/cities";
@@ -15,7 +15,7 @@ export default function NettoyageVilleRoute() {
   const { ville } = useParams<{ ville: string }>();
   const city = ville ? getCityBySlug(ville) : undefined;
 
-  return <LanguageProvider>{city ? <CityPage city={city} /> : <NotFoundCity />}</LanguageProvider>;
+  return city ? <CityPage city={city} /> : <NotFoundCity />;
 }
 
 function NotFoundCity() {

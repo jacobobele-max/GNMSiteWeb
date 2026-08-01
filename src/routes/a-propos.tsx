@@ -19,7 +19,7 @@ import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { LanguageProvider, useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
 import hero2 from "@/assets/hero-2.jpg";
@@ -27,14 +27,6 @@ import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
 import work4 from "@/assets/work-4.jpg";
-
-export default function AProposRoute() {
-  return (
-    <LanguageProvider>
-      <AboutPage />
-    </LanguageProvider>
-  );
-}
 
 const content = {
   fr: {
@@ -181,7 +173,7 @@ const qualityIcons = [Users, Sparkles, Leaf, HeartHandshake];
 const pillarIcons = [Zap, Recycle, Lightbulb];
 const featureIcons = [Users, ShieldCheck, Award, Headphones];
 
-function AboutPage() {
+export default function AboutPage() {
   const { lang } = useI18n();
   const c = content[lang];
 

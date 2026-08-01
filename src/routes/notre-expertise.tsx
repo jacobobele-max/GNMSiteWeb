@@ -19,7 +19,7 @@ import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { LanguageProvider, useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
 import hero2 from "@/assets/hero-2.jpg";
@@ -27,14 +27,6 @@ import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
 import work5 from "@/assets/work-5.jpg";
 import work6 from "@/assets/work-6.jpg";
-
-export default function NotreExpertiseRoute() {
-  return (
-    <LanguageProvider>
-      <ExpertisePage />
-    </LanguageProvider>
-  );
-}
 
 const content = {
   fr: {
@@ -219,7 +211,7 @@ const content = {
   },
 } as const;
 
-function ExpertisePage() {
+export default function ExpertisePage() {
   const { lang } = useI18n();
   const c = content[lang];
 
