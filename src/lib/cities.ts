@@ -17,10 +17,10 @@ export const cities: CityContent[] = [
     name: "Libreville",
     title: "Nettoyage professionnel à Libreville | Gabon Nettoyage & Multiservices",
     metaDescription:
-      "Nettoyage de bureaux, désinfection et entretien professionnel à Libreville. Gabon Nettoyage & Multiservices, basée à Owendo, à votre service depuis 2020.",
+      "Nettoyage de bureaux, désinfection et entretien professionnel à Libreville. Gabon Nettoyage & Multiservices, basée à Cité Damas, à votre service depuis 2020.",
     h1: "Nettoyage professionnel à Libreville",
     presence:
-      "Notre siège social est basé à Owendo, au cœur de Libreville. C'est depuis cette base que Gabon Nettoyage & Multiservices accompagne, depuis janvier 2020, les entreprises et les particuliers de la capitale : nettoyage de bureaux, résidentiel, désinfection et entretien extérieur, avec la même exigence de réactivité et de qualité qui caractérise nos équipes.",
+      "Notre siège social est basé à Cité Damas, au cœur de Libreville. C'est depuis cette base que Gabon Nettoyage & Multiservices accompagne, depuis janvier 2020, les entreprises et les particuliers de la capitale : nettoyage de bureaux, résidentiel, désinfection et entretien extérieur, avec la même exigence de réactivité et de qualité qui caractérise nos équipes.",
   },
   {
     slug: "port-gentil",

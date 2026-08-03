@@ -31,7 +31,7 @@ export default function ContactPage() {
       { property: "og:title", content: "Contact — Gabon Nettoyage & Multiservices" },
       {
         property: "og:description",
-        content: "Nous contacter à Libreville (Owendo) — devis et renseignements.",
+        content: "Nous contacter à Libreville (Cité Damas) — devis et renseignements.",
       },
     ],
   });
@@ -58,7 +58,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Adresse",
-      value: "Akourname 2, Owendo, Gabon",
+      value: "Cité Damas, Rue Dr Julien Mezu, Libreville, Gabon",
     },
     {
       icon: Phone,
@@ -107,7 +107,7 @@ export default function ContactPage() {
           <div className="overflow-hidden rounded-3xl shadow-card ring-1 ring-border">
             <iframe
               title="Gabon Nettoyage & Multiservices — Localisation"
-              src="https://www.google.com/maps?q=Owendo,Libreville,Gabon&output=embed"
+              src="https://www.google.com/maps?q=Cit%C3%A9+Damas%2C+Rue+Dr+Julien+Mezu%2C+Libreville%2C+Gabon&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-[420px] w-full border-0"
