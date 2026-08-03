@@ -24,7 +24,10 @@
       "Bash(curl -s -o /dev/null -w \"robots.txt → HTTP %{http_code}\\\\n\" https://gabonnettoyage.net/robots.txt)",
       "Bash(curl -s -L -o /dev/null -w \"final URL: %{url_effective}  HTTP: %{http_code}\\\\n\" https://gabonnettoyage.net/nettoyage/libreville)",
       "Bash(curl -s -I https://gabonnettoyage.net/nettoyage/libreville)",
-      "Bash(curl -s -L https://gabonnettoyage.net/nettoyage/libreville)"
+      "Bash(curl -s -L https://gabonnettoyage.net/nettoyage/libreville)",
+      "Bash(npm install *)",
+      "Bash(node ftp-deploy.mjs)",
+      "Bash(node -e ' *)"
     ]
   }
 }
