@@ -1,10 +1,10 @@
 import { useI18n } from "@/lib/i18n";
-import w1 from "@/assets/work-1.jpg";
-import w2 from "@/assets/work-2.jpg";
-import w3 from "@/assets/work-3.jpg";
-import w4 from "@/assets/work-4.jpg";
-import w5 from "@/assets/work-5.jpg";
-import w6 from "@/assets/work-6.jpg";
+import w1 from "@/assets/work-1.webp";
+import w2 from "@/assets/work-2.webp";
+import w3 from "@/assets/work-3.webp";
+import w4 from "@/assets/work-4.webp";
+import w5 from "@/assets/work-5.webp";
+import w6 from "@/assets/work-6.webp";
 
 const items = [
   { img: w1, label: "Grand nettoyage de sols", span: "md:col-span-2 md:row-span-1" },

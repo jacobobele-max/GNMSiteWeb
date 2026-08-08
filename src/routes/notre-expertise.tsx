@@ -22,11 +22,11 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL, SITE_URL } from "@/lib/constants";
-import hero2 from "@/assets/hero-2.jpg";
-import work2 from "@/assets/work-2.jpg";
-import work3 from "@/assets/work-3.jpg";
-import work5 from "@/assets/work-5.jpg";
-import work6 from "@/assets/work-6.jpg";
+import hero2 from "@/assets/hero-2.webp";
+import work2 from "@/assets/work-2.webp";
+import work3 from "@/assets/work-3.webp";
+import work5 from "@/assets/work-5.webp";
+import work6 from "@/assets/work-6.webp";
 
 const content = {
   fr: {

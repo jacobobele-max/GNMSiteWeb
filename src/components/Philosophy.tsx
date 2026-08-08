@@ -1,6 +1,6 @@
 import { Leaf, ShieldCheck, HeartHandshake, Award } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import hero2 from "@/assets/hero-2.jpg";
+import hero2 from "@/assets/hero-2.webp";
 
 const pillars = [
   {

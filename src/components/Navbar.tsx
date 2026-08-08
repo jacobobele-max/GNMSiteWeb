@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, Search, Languages, Check, ArrowRight } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.webp";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 import { categories } from "@/lib/services-catalog";

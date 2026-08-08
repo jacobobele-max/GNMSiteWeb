@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Youtube, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.webp";
 import { cities } from "@/lib/cities";
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
