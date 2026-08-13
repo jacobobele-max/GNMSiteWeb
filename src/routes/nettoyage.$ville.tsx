@@ -91,6 +91,12 @@ function CityPage({ city }: { city: CityContent }) {
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
             {lang === "fr" ? `Nos services à ${city.name}` : `Our services in ${city.name}`}
           </h2>
+          <p className="mt-5 max-w-3xl text-[17px] leading-relaxed text-muted-foreground">
+            {city.intro}
+          </p>
+          <p className="mt-3 max-w-3xl text-sm font-semibold text-brand-green-deep">
+            {city.highlight}
+          </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {categories.map((cat) => (
               <Link
