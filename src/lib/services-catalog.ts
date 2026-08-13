@@ -1,4 +1,4 @@
-import { Building2, Factory, ShieldPlus, Leaf, Recycle, Users } from "lucide-react";
+import { Building2, Factory, ShieldPlus, Leaf, Recycle, Users, type LucideIcon } from "lucide-react";
 import hero1 from "@/assets/hero-1.webp";
 import hero2 from "@/assets/hero-2.webp";
 import hero3 from "@/assets/hero-3.webp";
@@ -18,7 +18,7 @@ export type Service = {
 
 export type Category = {
   slug: string;
-  icon: any;
+  icon: LucideIcon;
   name: Bi;
   tagline: Bi;
   image: string;
@@ -30,7 +30,10 @@ export const categories: Category[] = [
     slug: "nettoyage-courant",
     icon: Building2,
     name: { fr: "Nettoyage courant", en: "Regular cleaning" },
-    tagline: { fr: "Entretien régulier de vos espaces au quotidien.", en: "Everyday upkeep of your spaces." },
+    tagline: {
+      fr: "Entretien régulier de vos espaces au quotidien.",
+      en: "Everyday upkeep of your spaces.",
+    },
     image: hero1,
     services: [
       {
@@ -82,7 +85,10 @@ export const categories: Category[] = [
     slug: "nettoyage-specialise",
     icon: Factory,
     name: { fr: "Nettoyage spécialisé", en: "Specialized cleaning" },
-    tagline: { fr: "Interventions techniques et mécanisées.", en: "Technical and mechanized interventions." },
+    tagline: {
+      fr: "Interventions techniques et mécanisées.",
+      en: "Technical and mechanized interventions.",
+    },
     image: work1,
     services: [
       {
@@ -182,7 +188,10 @@ export const categories: Category[] = [
     slug: "entretien-exterieur",
     icon: Leaf,
     name: { fr: "Entretien extérieur", en: "Outdoor upkeep" },
-    tagline: { fr: "Jardins, espaces verts et extérieurs.", en: "Gardens, green spaces and outdoors." },
+    tagline: {
+      fr: "Jardins, espaces verts et extérieurs.",
+      en: "Gardens, green spaces and outdoors.",
+    },
     image: hero3,
     services: [
       {
@@ -232,7 +241,10 @@ export const categories: Category[] = [
     slug: "gestion-dechets",
     icon: Recycle,
     name: { fr: "Gestion des déchets", en: "Waste management" },
-    tagline: { fr: "Collecte, tri et recyclage responsable.", en: "Responsible collection, sorting and recycling." },
+    tagline: {
+      fr: "Collecte, tri et recyclage responsable.",
+      en: "Responsible collection, sorting and recycling.",
+    },
     image: work2,
     services: [
       {
@@ -328,7 +340,7 @@ export const categories: Category[] = [
 ];
 
 export const allServices = categories.flatMap((c) =>
-  c.services.map((s) => ({ ...s, category: c }))
+  c.services.map((s) => ({ ...s, category: c })),
 );
 
 export function findService(slug: string) {

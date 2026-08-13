@@ -40,8 +40,7 @@ export const cities: CityContent[] = [
       "Gabon Nettoyage & Multiservices est présent à Port-Gentil, où nous nous positionnons comme l'une des entreprises de propreté parmi les leaders sur le marché. Réactivité, qualité du nettoyage et respect de l'environnement caractérisent nos équipes sur place, au service des entreprises et des particuliers de la ville.",
     intro:
       "Capitale économique et pétrolière du Gabon, Port-Gentil concentre nos interventions auprès d'acteurs industriels et logistiques exigeant des standards HSE stricts.",
-    highlight:
-      "Expertise nettoyage industriel et sites à contraintes d'accès réglementées.",
+    highlight: "Expertise nettoyage industriel et sites à contraintes d'accès réglementées.",
   },
   {
     slug: "moanda",
@@ -68,8 +67,7 @@ export const cities: CityContent[] = [
       "Gabon Nettoyage & Multiservices est présent à Franceville, où nous nous positionnons comme l'une des entreprises de propreté parmi les leaders sur le marché, au service des entreprises et des particuliers de la ville avec la même exigence de qualité qu'à Libreville.",
     intro:
       "À Franceville, nous accompagnons entreprises et institutions du Haut-Ogooué avec les mêmes standards de qualité que sur nos autres sites, adaptés aux réalités logistiques de la région.",
-    highlight:
-      "Couverture Haut-Ogooué avec équipes locales formées aux procédures GN&M.",
+    highlight: "Couverture Haut-Ogooué avec équipes locales formées aux procédures GN&M.",
   },
 ];
 

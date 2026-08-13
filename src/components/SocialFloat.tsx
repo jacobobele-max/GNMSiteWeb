@@ -7,11 +7,36 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const links = [
-  { href: "https://ga.linkedin.com/in/gabon-nettoyage-et-multiservices-313309406", label: "LinkedIn", Icon: Linkedin, color: "hover:bg-[#0a66c2]" },
-  { href: "https://www.facebook.com/Gabonnettoyage/", label: "Facebook", Icon: Facebook, color: "hover:bg-[#1877f2]" },
-  { href: "https://www.instagram.com/gabonnettoyage", label: "Instagram", Icon: Instagram, color: "hover:bg-[#e1306c]" },
-  { href: "https://www.youtube.com/@GabonNettoyageEtMultiservices", label: "YouTube", Icon: Youtube, color: "hover:bg-[#ff0000]" },
-  { href: "https://www.tiktok.com/@gabonnettoyageetm", label: "TikTok", Icon: TikTokIcon, color: "hover:bg-black" },
+  {
+    href: "https://ga.linkedin.com/in/gabon-nettoyage-et-multiservices-313309406",
+    label: "LinkedIn",
+    Icon: Linkedin,
+    color: "hover:bg-[#0a66c2]",
+  },
+  {
+    href: "https://www.facebook.com/Gabonnettoyage/",
+    label: "Facebook",
+    Icon: Facebook,
+    color: "hover:bg-[#1877f2]",
+  },
+  {
+    href: "https://www.instagram.com/gabonnettoyage",
+    label: "Instagram",
+    Icon: Instagram,
+    color: "hover:bg-[#e1306c]",
+  },
+  {
+    href: "https://www.youtube.com/@GabonNettoyageEtMultiservices",
+    label: "YouTube",
+    Icon: Youtube,
+    color: "hover:bg-[#ff0000]",
+  },
+  {
+    href: "https://www.tiktok.com/@gabonnettoyageetm",
+    label: "TikTok",
+    Icon: TikTokIcon,
+    color: "hover:bg-black",
+  },
 ];
 
 export function SocialFloat() {

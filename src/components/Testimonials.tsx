@@ -44,16 +44,12 @@ export function Testimonials() {
           <span className="inline-block rounded-full bg-brand-yellow/95 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-blue-deep">
             {t("test.eyebrow")}
           </span>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-            {t("test.title")}
-          </h2>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">{t("test.title")}</h2>
           <div className="mt-4 flex items-center justify-center gap-2 text-brand-yellow">
             {[...Array(5)].map((_, i) => (
               <Star key={i} size={20} fill="currentColor" />
             ))}
-            <span className="ml-2 text-sm text-white/90">
-              4,9 / 5 sur Google
-            </span>
+            <span className="ml-2 text-sm text-white/90">4,9 / 5 sur Google</span>
           </div>
         </div>
 
@@ -63,18 +59,13 @@ export function Testimonials() {
               key={i}
               className="group relative rounded-2xl bg-white/10 p-6 backdrop-blur-md transition-all hover:-translate-y-1 hover:bg-white/15"
             >
-              <Quote
-                className="absolute right-4 top-4 text-brand-yellow/60"
-                size={28}
-              />
+              <Quote className="absolute right-4 top-4 text-brand-yellow/60" size={28} />
               <div className="flex items-center gap-1 text-brand-yellow">
                 {[...Array(r.rating)].map((_, j) => (
                   <Star key={j} size={14} fill="currentColor" />
                 ))}
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-white/90">
-                "{r.text}"
-              </p>
+              <p className="mt-4 text-sm leading-relaxed text-white/90">"{r.text}"</p>
               <div className="mt-5 flex items-center gap-3 border-t border-white/15 pt-4">
                 <div className="flex size-10 items-center justify-center rounded-full bg-gradient-sun font-bold text-brand-blue-deep">
                   {r.initial}

@@ -39,7 +39,10 @@ export function Footer() {
             <div className="mt-5 flex gap-2">
               {[
                 { Icon: Facebook, href: "https://www.facebook.com/Gabonnettoyage/" },
-                { Icon: Linkedin, href: "https://ga.linkedin.com/in/gabon-nettoyage-et-multiservices-313309406" },
+                {
+                  Icon: Linkedin,
+                  href: "https://ga.linkedin.com/in/gabon-nettoyage-et-multiservices-313309406",
+                },
                 { Icon: Instagram, href: "https://www.instagram.com/gabonnettoyage" },
                 { Icon: Youtube, href: "https://www.youtube.com/@GabonNettoyageEtMultiservices" },
                 { Icon: TikTokIcon, href: "https://www.tiktok.com/@gabonnettoyageetm" },

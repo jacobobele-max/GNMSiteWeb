@@ -339,6 +339,7 @@ function MegaCategoriesPanel() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${active.image})` }}
+          aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-green-deep/95 via-brand-green-deep/70 to-brand-green-deep/40" />
         <div className="relative flex h-full flex-col justify-end p-6">

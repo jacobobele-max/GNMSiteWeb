@@ -10,6 +10,11 @@ export default defineConfig({
     tailwindcss(),
     tsConfigPaths(),
     ViteImageOptimizer({
+      // public/ contient déjà des images optimisées une fois pour toutes
+      // (voir commit a71d360) — les ré-optimiser à chaque build les
+      // recompresserait avec perte à répétition. On ne cible que les
+      // assets qui passent par src/ (hashés dans dist/assets/).
+      includePublic: false,
       jpg: { quality: 75 },
       jpeg: { quality: 75 },
       png: { quality: 75 },

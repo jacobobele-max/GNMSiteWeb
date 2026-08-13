@@ -66,10 +66,9 @@ export function Philosophy() {
             <span className="text-gradient-brand">{t("philo.title.b")}</span>
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Chez Gabon Nettoyage & Multiservices, nous croyons qu'un environnement
-            propre commence par des choix responsables. Nous privilégions des
-            produits biologiques et des méthodes durables pour des espaces sains,
-            sans compromis sur l'efficacité.
+            Chez Gabon Nettoyage & Multiservices, nous croyons qu'un environnement propre commence
+            par des choix responsables. Nous privilégions des produits biologiques et des méthodes
+            durables pour des espaces sains, sans compromis sur l'efficacité.
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -81,9 +80,7 @@ export function Philosophy() {
                 <div className="inline-flex size-11 items-center justify-center rounded-lg bg-brand-green/15 text-brand-green-deep">
                   <p.icon size={22} />
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-foreground">
-                  {p.title}
-                </h3>
+                <h3 className="mt-4 text-base font-semibold text-foreground">{p.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
               </div>
             ))}

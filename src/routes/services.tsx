@@ -241,6 +241,7 @@ function ServiceModal({
           <div
             className="hidden min-h-[220px] bg-cover bg-center sm:block"
             style={{ backgroundImage: `url(${service.category.image})` }}
+            aria-hidden="true"
           />
           <div className="p-7">
             <div className="flex items-center gap-3">

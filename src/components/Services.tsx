@@ -12,74 +12,135 @@ import {
   Wind,
   Grid3x3,
   ArrowRight,
+  type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 
 type Cat = "particulier" | "entreprise";
 
-const services: Record<Cat, Array<{ icon: any; fr: { t: string; d: string }; en: { t: string; d: string } }>> = {
+const services: Record<
+  Cat,
+  Array<{ icon: LucideIcon; fr: { t: string; d: string }; en: { t: string; d: string } }>
+> = {
   particulier: [
     {
       icon: Home,
-      fr: { t: "Nettoyage résidentiel", d: "Une maison impeccable, à votre rythme, par une équipe de confiance et formée." },
-      en: { t: "Home cleaning", d: "An impeccable home, at your pace, by a trained and trusted team." },
+      fr: {
+        t: "Nettoyage résidentiel",
+        d: "Une maison impeccable, à votre rythme, par une équipe de confiance et formée.",
+      },
+      en: {
+        t: "Home cleaning",
+        d: "An impeccable home, at your pace, by a trained and trusted team.",
+      },
     },
     {
       icon: Waves,
-      fr: { t: "Entretien piscine", d: "Traitement de l'eau, nettoyage des parois, équilibre chimique vérifié." },
-      en: { t: "Pool maintenance", d: "Water treatment, wall cleaning, balanced chemistry checked." },
+      fr: {
+        t: "Entretien piscine",
+        d: "Traitement de l'eau, nettoyage des parois, équilibre chimique vérifié.",
+      },
+      en: {
+        t: "Pool maintenance",
+        d: "Water treatment, wall cleaning, balanced chemistry checked.",
+      },
     },
     {
       icon: Trees,
-      fr: { t: "Jardin & espaces verts", d: "Tonte, taille, désherbage et entretien régulier de vos jardins." },
+      fr: {
+        t: "Jardin & espaces verts",
+        d: "Tonte, taille, désherbage et entretien régulier de vos jardins.",
+      },
       en: { t: "Garden & green spaces", d: "Mowing, pruning, weeding and regular garden upkeep." },
     },
     {
       icon: Hammer,
-      fr: { t: "Fin de chantier / rénovation", d: "Nettoyage minutieux après travaux : poussière, résidus, vitres." },
-      en: { t: "Post-construction / renovation", d: "Detailed cleanup after works: dust, residue, windows." },
+      fr: {
+        t: "Fin de chantier / rénovation",
+        d: "Nettoyage minutieux après travaux : poussière, résidus, vitres.",
+      },
+      en: {
+        t: "Post-construction / renovation",
+        d: "Detailed cleanup after works: dust, residue, windows.",
+      },
     },
     {
       icon: Truck,
-      fr: { t: "Déménagement", d: "Logistique et manutention pour un déménagement serein, en toute sécurité." },
+      fr: {
+        t: "Déménagement",
+        d: "Logistique et manutention pour un déménagement serein, en toute sécurité.",
+      },
       en: { t: "Moving", d: "Logistics and handling for a smooth, safe move." },
     },
     {
       icon: SprayCan,
-      fr: { t: "Désinfection domicile", d: "Désinfection sécuritaire aux produits certifiés, pour vos enfants et animaux." },
-      en: { t: "Home disinfection", d: "Safe disinfection with certified products, safe for kids and pets." },
+      fr: {
+        t: "Désinfection domicile",
+        d: "Désinfection sécuritaire aux produits certifiés, pour vos enfants et animaux.",
+      },
+      en: {
+        t: "Home disinfection",
+        d: "Safe disinfection with certified products, safe for kids and pets.",
+      },
     },
   ],
   entreprise: [
     {
       icon: Building2,
-      fr: { t: "Nettoyage de bureaux", d: "Entretien quotidien ou ponctuel de vos espaces professionnels, en toute discrétion." },
-      en: { t: "Office cleaning", d: "Daily or one-off upkeep of your workspaces, with full discretion." },
+      fr: {
+        t: "Nettoyage de bureaux",
+        d: "Entretien quotidien ou ponctuel de vos espaces professionnels, en toute discrétion.",
+      },
+      en: {
+        t: "Office cleaning",
+        d: "Daily or one-off upkeep of your workspaces, with full discretion.",
+      },
     },
     {
       icon: Wind,
-      fr: { t: "Nettoyage de vitres", d: "Vitres, baies, façades : intérieur comme extérieur, à toutes hauteurs." },
+      fr: {
+        t: "Nettoyage de vitres",
+        d: "Vitres, baies, façades : intérieur comme extérieur, à toutes hauteurs.",
+      },
       en: { t: "Window cleaning", d: "Windows, bays, façades: indoor and outdoor, at any height." },
     },
     {
       icon: Grid3x3,
-      fr: { t: "Carrelage & sols durs", d: "Décapage, lustrage, cristallisation pour des sols brillants et durables." },
-      en: { t: "Tile & hard floors", d: "Stripping, polishing, crystallization for lasting, shiny floors." },
+      fr: {
+        t: "Carrelage & sols durs",
+        d: "Décapage, lustrage, cristallisation pour des sols brillants et durables.",
+      },
+      en: {
+        t: "Tile & hard floors",
+        d: "Stripping, polishing, crystallization for lasting, shiny floors.",
+      },
     },
     {
       icon: SprayCan,
-      fr: { t: "Désinfection professionnelle", d: "Protocoles sanitaires conformes pour vos équipes et vos clients." },
-      en: { t: "Professional disinfection", d: "Compliant sanitary protocols for your teams and clients." },
+      fr: {
+        t: "Désinfection professionnelle",
+        d: "Protocoles sanitaires conformes pour vos équipes et vos clients.",
+      },
+      en: {
+        t: "Professional disinfection",
+        d: "Compliant sanitary protocols for your teams and clients.",
+      },
     },
     {
       icon: Bug,
-      fr: { t: "Dératisation & 3D", d: "Lutte contre les nuisibles (rats, insectes, termites) avec des protocoles maîtrisés." },
+      fr: {
+        t: "Dératisation & 3D",
+        d: "Lutte contre les nuisibles (rats, insectes, termites) avec des protocoles maîtrisés.",
+      },
       en: { t: "Pest control (3D)", d: "Rats, insects, termites — controlled, expert protocols." },
     },
     {
       icon: Sparkles,
-      fr: { t: "Manutention & logistique", d: "Manutention, déménagement d'entreprise et installation, en toute sécurité." },
+      fr: {
+        t: "Manutention & logistique",
+        d: "Manutention, déménagement d'entreprise et installation, en toute sécurité.",
+      },
       en: { t: "Logistics & handling", d: "Corporate moves, handling and installation, safely." },
     },
   ],
@@ -98,7 +159,8 @@ export function Services() {
             {t("services.eyebrow")}
           </span>
           <h2 className="mt-4 text-4xl font-bold text-foreground md:text-5xl">
-            {t("services.title.a")} <span className="text-gradient-brand">{t("services.title.b")}</span>{" "}
+            {t("services.title.a")}{" "}
+            <span className="text-gradient-brand">{t("services.title.b")}</span>{" "}
             {t("services.title.c")}
           </h2>
           <p className="mt-4 text-muted-foreground">{t("services.subtitle")}</p>

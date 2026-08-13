@@ -25,7 +25,8 @@ export function Gallery() {
             {t("gallery.eyebrow")}
           </span>
           <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-            {t("gallery.title.a")} <span className="text-gradient-brand">{t("gallery.title.b")}</span>
+            {t("gallery.title.a")}{" "}
+            <span className="text-gradient-brand">{t("gallery.title.b")}</span>
           </h2>
           <p className="mt-4 text-muted-foreground">{t("gallery.subtitle")}</p>
         </div>
@@ -44,9 +45,7 @@ export function Gallery() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-deep/85 via-brand-blue-deep/10 to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
               <figcaption className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="text-xs uppercase tracking-wider text-brand-yellow">
-                  Réalisation
-                </p>
+                <p className="text-xs uppercase tracking-wider text-brand-yellow">Réalisation</p>
                 <p className="mt-0.5 font-semibold">{it.label}</p>
               </figcaption>
             </figure>

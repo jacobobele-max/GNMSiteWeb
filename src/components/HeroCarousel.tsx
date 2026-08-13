@@ -9,9 +9,18 @@ import hero2 from "@/assets/hero-2.webp";
 import hero3 from "@/assets/hero-3.webp";
 
 const slides = [
-  { image: hero1, keys: { eyebrow: "hero.eyebrow.1", title: "hero.title.1", subtitle: "hero.sub.1" } },
-  { image: hero2, keys: { eyebrow: "hero.eyebrow.2", title: "hero.title.2", subtitle: "hero.sub.2" } },
-  { image: hero3, keys: { eyebrow: "hero.eyebrow.3", title: "hero.title.3", subtitle: "hero.sub.3" } },
+  {
+    image: hero1,
+    keys: { eyebrow: "hero.eyebrow.1", title: "hero.title.1", subtitle: "hero.sub.1" },
+  },
+  {
+    image: hero2,
+    keys: { eyebrow: "hero.eyebrow.2", title: "hero.title.2", subtitle: "hero.sub.2" },
+  },
+  {
+    image: hero3,
+    keys: { eyebrow: "hero.eyebrow.3", title: "hero.title.3", subtitle: "hero.sub.3" },
+  },
 ];
 
 export function HeroCarousel() {
@@ -36,20 +45,14 @@ export function HeroCarousel() {
       <div ref={emblaRef} className="h-full overflow-hidden">
         <div className="flex h-full">
           {slides.map((s, i) => (
-            <div
-              key={i}
-              className="relative h-full w-full flex-[0_0_100%]"
-            >
+            <div key={i} className="relative h-full w-full flex-[0_0_100%]">
               <img
                 src={s.image}
                 alt={t(s.keys.title)}
                 className="absolute inset-0 h-full w-full object-cover"
                 loading={i === 0 ? "eager" : "lazy"}
               />
-              <div
-                className="absolute inset-0"
-                style={{ background: "var(--gradient-overlay)" }}
-              />
+              <div className="absolute inset-0" style={{ background: "var(--gradient-overlay)" }} />
               <div className="absolute inset-0 bg-brand-blue-deep/30" />
               <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 md:px-12">
                 <div className="max-w-2xl text-white animate-fade-up">
