@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useMemo, useState } from "react";
-import { Search, Check, X, ArrowRight, Clock, Users, Wrench, Leaf } from "lucide-react";
+import { Search, Check, ArrowRight, Clock, Users, Wrench, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -9,10 +9,7 @@ import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
-import { DEVIS_URL } from "@/lib/constants";
-import { categories, allServices, type Service, type Category } from "@/lib/services-catalog";
-
-type ActiveService = (Service & { category: Category }) | null;
+import { categories, allServices } from "@/lib/services-catalog";
 
 export default function ServicesPage() {
   useDocumentHead({
@@ -37,7 +34,6 @@ export default function ServicesPage() {
   const [q, setQ] = useState("");
   const [catSlug, setCatSlug] = useState<string>("");
   const [aud, setAud] = useState<string>("");
-  const [active, setActive] = useState<ActiveService>(null);
 
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
@@ -160,13 +156,13 @@ export default function ServicesPage() {
                   <ul className="mt-5 flex-1 space-y-2.5">
                     {items.map((s) => (
                       <li key={s.slug}>
-                        <button
-                          onClick={() => setActive(s)}
+                        <Link
+                          to={`/services/${s.slug}`}
                           className="flex w-full items-start gap-2 text-left text-sm text-foreground/80 transition-colors hover:text-brand-green"
                         >
                           <Check size={16} className="mt-0.5 shrink-0 text-brand-green" />
                           <span>{s.name[lang]}</span>
-                        </button>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -203,83 +199,9 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Service detail modal */}
-      {active && <ServiceModal service={active} onClose={() => setActive(null)} />}
-
       <Footer />
       <QuoteChatbot />
       <WhatsAppFloat />
-    </div>
-  );
-}
-
-function ServiceModal({
-  service,
-  onClose,
-}: {
-  service: NonNullable<ActiveService>;
-  onClose: () => void;
-}) {
-  const { t, lang } = useI18n();
-  return (
-    <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-card shadow-brand"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          onClick={onClose}
-          className="absolute right-4 top-4 z-10 inline-flex size-8 items-center justify-center rounded-full bg-white/90 text-foreground shadow hover:bg-white"
-          aria-label={t("svc.modal.close")}
-        >
-          <X size={16} />
-        </button>
-        <div className="grid gap-0 sm:grid-cols-[1fr_1.2fr]">
-          <div
-            className="hidden min-h-[220px] bg-cover bg-center sm:block"
-            style={{ backgroundImage: `url(${service.category.image})` }}
-            aria-hidden="true"
-          />
-          <div className="p-7">
-            <div className="flex items-center gap-3">
-              <div className="inline-flex size-11 items-center justify-center rounded-xl bg-brand-green/15 text-brand-green-deep">
-                <service.category.icon size={22} />
-              </div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-brand-green-deep">
-                {service.category.name[lang]}
-              </span>
-            </div>
-            <h3 className="mt-4 font-display text-2xl font-bold text-foreground">
-              {service.name[lang]}
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">{service.description[lang]}</p>
-            <p className="mt-5 text-xs font-bold uppercase tracking-wider text-foreground">
-              {t("svc.modal.included")}
-            </p>
-            <ul className="mt-3 space-y-2">
-              {service.bullets.map((b) => (
-                <li key={b.fr} className="flex items-start gap-2 text-sm text-foreground/85">
-                  <Check size={16} className="mt-0.5 shrink-0 text-brand-green" />
-                  <span>{b[lang]}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 flex flex-wrap gap-2">
-              <Button asChild className="rounded-full bg-brand-green hover:bg-brand-green-deep">
-                <a href={DEVIS_URL} target="_blank" rel="noopener noreferrer">
-                  {t("cta.quote")}
-                </a>
-              </Button>
-              <Button variant="outline" onClick={onClose} className="rounded-full">
-                {t("svc.modal.close")}
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

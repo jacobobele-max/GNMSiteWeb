@@ -8,6 +8,7 @@ export const ROUTE_PATHS = {
   aPropos: "/a-propos",
   actualites: "/actualites",
   actualiteDetail: "/actualites/:slug",
+  serviceDetail: "/services/:slug",
   villeDetail: "/nettoyage/:ville",
   contact: "/contact",
 } as const;

@@ -35,25 +35,27 @@ async function loadRouteData() {
     const { ROUTE_PATHS } = await server.ssrLoadModule("/src/routes.config.ts");
     const { articles } = await server.ssrLoadModule("/src/lib/articles.ts");
     const { cities } = await server.ssrLoadModule("/src/lib/cities.ts");
-    return { ROUTE_PATHS, articles, cities };
+    const { allServices } = await server.ssrLoadModule("/src/lib/services-catalog.ts");
+    return { ROUTE_PATHS, articles, cities, allServices };
   } finally {
     await server.close();
   }
 }
 
-function buildRouteList(ROUTE_PATHS, articles, cities) {
+function buildRouteList(ROUTE_PATHS, articles, cities, allServices) {
   const staticRoutes = Object.values(ROUTE_PATHS).filter((p) => !p.includes(":"));
   const articleRoutes = articles.map((a) => ROUTE_PATHS.actualiteDetail.replace(":slug", a.slug));
   const cityRoutes = cities.map((c) => ROUTE_PATHS.villeDetail.replace(":ville", c.slug));
-  return [...staticRoutes, ...articleRoutes, ...cityRoutes];
+  const serviceRoutes = allServices.map((s) => ROUTE_PATHS.serviceDetail.replace(":slug", s.slug));
+  return [...staticRoutes, ...articleRoutes, ...cityRoutes, ...serviceRoutes];
 }
 
 async function main() {
   console.log(
-    "→ Lecture des routes (src/routes.config.ts), des articles (src/lib/articles.ts) et des villes (src/lib/cities.ts)...",
+    "→ Lecture des routes (src/routes.config.ts), des articles (src/lib/articles.ts), des villes (src/lib/cities.ts) et des services (src/lib/services-catalog.ts)...",
   );
-  const { ROUTE_PATHS, articles, cities } = await loadRouteData();
-  const ROUTES = buildRouteList(ROUTE_PATHS, articles, cities);
+  const { ROUTE_PATHS, articles, cities, allServices } = await loadRouteData();
+  const ROUTES = buildRouteList(ROUTE_PATHS, articles, cities, allServices);
   console.log(`  · ${ROUTES.length} routes à pré-rendre :\n    ${ROUTES.join("\n    ")}`);
 
   console.log("\n→ Démarrage du serveur local de prévisualisation...");

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Sparkles,
   Building2,
@@ -21,10 +22,16 @@ type Cat = "particulier" | "entreprise";
 
 const services: Record<
   Cat,
-  Array<{ icon: LucideIcon; fr: { t: string; d: string }; en: { t: string; d: string } }>
+  Array<{
+    slug: string;
+    icon: LucideIcon;
+    fr: { t: string; d: string };
+    en: { t: string; d: string };
+  }>
 > = {
   particulier: [
     {
+      slug: "nettoyage-residentiel",
       icon: Home,
       fr: {
         t: "Nettoyage résidentiel",
@@ -36,6 +43,7 @@ const services: Record<
       },
     },
     {
+      slug: "piscine",
       icon: Waves,
       fr: {
         t: "Entretien piscine",
@@ -47,6 +55,7 @@ const services: Record<
       },
     },
     {
+      slug: "jardin",
       icon: Trees,
       fr: {
         t: "Jardin & espaces verts",
@@ -55,6 +64,7 @@ const services: Record<
       en: { t: "Garden & green spaces", d: "Mowing, pruning, weeding and regular garden upkeep." },
     },
     {
+      slug: "fin-chantier",
       icon: Hammer,
       fr: {
         t: "Fin de chantier / rénovation",
@@ -66,6 +76,7 @@ const services: Record<
       },
     },
     {
+      slug: "demenagement",
       icon: Truck,
       fr: {
         t: "Déménagement",
@@ -74,6 +85,7 @@ const services: Record<
       en: { t: "Moving", d: "Logistics and handling for a smooth, safe move." },
     },
     {
+      slug: "desinfection-domicile",
       icon: SprayCan,
       fr: {
         t: "Désinfection domicile",
@@ -87,6 +99,7 @@ const services: Record<
   ],
   entreprise: [
     {
+      slug: "nettoyage-bureaux",
       icon: Building2,
       fr: {
         t: "Nettoyage de bureaux",
@@ -98,6 +111,7 @@ const services: Record<
       },
     },
     {
+      slug: "vitres",
       icon: Wind,
       fr: {
         t: "Nettoyage de vitres",
@@ -106,6 +120,7 @@ const services: Record<
       en: { t: "Window cleaning", d: "Windows, bays, façades: indoor and outdoor, at any height." },
     },
     {
+      slug: "sols-durs",
       icon: Grid3x3,
       fr: {
         t: "Carrelage & sols durs",
@@ -117,6 +132,7 @@ const services: Record<
       },
     },
     {
+      slug: "desinfection-pro",
       icon: SprayCan,
       fr: {
         t: "Désinfection professionnelle",
@@ -128,6 +144,7 @@ const services: Record<
       },
     },
     {
+      slug: "deratisation",
       icon: Bug,
       fr: {
         t: "Dératisation & 3D",
@@ -136,6 +153,9 @@ const services: Record<
       en: { t: "Pest control (3D)", d: "Rats, insects, termites — controlled, expert protocols." },
     },
     {
+      // Pas de service catalogue distinct pour la "manutention" — on renvoie
+      // vers "demenagement" qui couvre déjà ce contenu (voir services-catalog.ts).
+      slug: "demenagement",
       icon: Sparkles,
       fr: {
         t: "Manutention & logistique",
@@ -200,12 +220,12 @@ export function Services() {
                   </div>
                   <h3 className="mt-5 text-xl font-semibold text-foreground">{copy.t}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{copy.d}</p>
-                  <a
-                    href="#contact"
+                  <Link
+                    to={`/services/${s.slug}`}
                     className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors hover:text-brand-green"
                   >
                     {t("services.learnMore")} <ArrowRight size={14} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             );

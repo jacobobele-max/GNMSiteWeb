@@ -1,4 +1,12 @@
-import { Building2, Factory, ShieldPlus, Leaf, Recycle, Users, type LucideIcon } from "lucide-react";
+import {
+  Building2,
+  Factory,
+  ShieldPlus,
+  Leaf,
+  Recycle,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 import hero1 from "@/assets/hero-1.webp";
 import hero2 from "@/assets/hero-2.webp";
 import hero3 from "@/assets/hero-3.webp";
