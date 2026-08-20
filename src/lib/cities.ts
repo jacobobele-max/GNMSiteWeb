@@ -1,8 +1,9 @@
 // Contenu des pages locales par ville. Les paragraphes de présence reprennent
 // et paraphrasent le texte déjà présent dans src/routes/a-propos.tsx
 // ("Présent à l'Estuaire, Port-Gentil, Moanda et Franceville..."). Les
-// références client (ex. contrat hôpital COMILOG/HMA à Moanda) sont
-// confirmées par le client — à revalider avant toute réutilisation ailleurs.
+// références client (ex. contrat hôpital COMILOG/HMA à Moanda, prestation
+// de dératisation pour Ecobank Franceville) sont confirmées par le client —
+// à revalider avant toute réutilisation ailleurs.
 export type CityContent = {
   slug: string;
   name: string;
@@ -61,14 +62,10 @@ export const cities: CityContent[] = [
     name: "Franceville",
     title: "Nettoyage professionnel à Franceville | GN&M",
     metaDescription:
-      "Services de nettoyage et d'entretien à Franceville pour entreprises, établissements et particuliers.",
+      "Services de désinfection, dératisation et désinsectisation à Franceville, Haut-Ogooué, dont une prestation pour Ecobank Franceville.",
     h1: "Nettoyage professionnel à Franceville",
-    // Texte volontairement générique — pas assez d'éléments concrets sur
-    // l'activité GN&M à Franceville pour un texte différenciant sans
-    // inventer de détails. À enrichir dès que Jacob fournit des précisions
-    // (chantiers, secteurs clients, ancienneté locale...).
     presence:
-      "Gabon Nettoyage & Multiservices est présent à Franceville pour accompagner entreprises et particuliers de la province du Haut-Ogooué dans leurs besoins de propreté et d'entretien.",
+      "Gabon Nettoyage & Multiservices intervient à Franceville, dans la province du Haut-Ogooué, notamment via une prestation 3D (désinfection, dératisation, désinsectisation) assurée à temps partiel pour Ecobank Franceville. Cette présence s'inscrit dans notre engagement à couvrir l'ensemble du territoire gabonais avec le même niveau d'exigence qu'à Libreville, Port-Gentil ou Moanda. Entreprises et particuliers de Franceville peuvent nous solliciter pour des prestations de nettoyage, de désinfection et de dératisation adaptées à leurs besoins.",
     intro:
       "À Franceville, nous accompagnons entreprises et institutions du Haut-Ogooué avec les mêmes standards de qualité que sur nos autres sites, adaptés aux réalités logistiques de la région.",
     highlight: "Couverture Haut-Ogooué avec équipes locales formées aux procédures GN&M.",
