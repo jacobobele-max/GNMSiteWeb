@@ -13,6 +13,7 @@ import {
   Award,
   Headphones,
   Truck,
+  Check,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -31,13 +32,31 @@ import work4 from "@/assets/work-4.webp";
 const content = {
   fr: {
     crumb: "À propos",
-    title: "Qui sommes-nous ?",
-    intro: [
-      "Gabon Nettoyage & Multiservices est une entreprise de droit gabonais qui offre des services professionnels aux entreprises et particuliers. Engagée dans l'hygiène et l'assainissement, elle met en œuvre différentes compétences techniques au profit du bien-être.",
-      "Depuis janvier 2020, Gabon Nettoyage & Multiservices veille à assurer des environnements de travail agréables et sains à leurs occupants et à garantir la satisfaction des clients qui nous font confiance en tant que société de nettoyage des locaux professionnels et particuliers.",
-      "Présent à l'Estuaire, Port-Gentil, Moanda et Franceville, Gabon Nettoyage & Multi-services se positionne comme l'une des entreprises de propreté parmi les leaders sur le marché de la propreté. Réactivité, service de ménage professionnel, qualité du nettoyage et respect de l'environnement caractérisent nos équipes.",
-      "Notre réseau d'agences de nettoyage professionnel vous aidera à trouver la prestation de qualité dont vous avez besoin. N'hésitez pas à faire appel à notre entreprise spécialisée pour établir un devis gratuit et adapter votre contrat d'entretien à vos besoins.",
-    ],
+    title: "Qui sommes-nous",
+    opening:
+      "Depuis janvier 2020, Gabon Nettoyage & Multiservices (GNM) veille à assurer des environnements de travail agréables et sains, et à garantir la satisfaction des clients qui nous font confiance en tant que société de nettoyage des locaux professionnels et particuliers.",
+    presence: {
+      heading: "Notre présence",
+      text: "Présents à l'Estuaire, Port-Gentil, Moanda et Franceville, Gabon Nettoyage & Multiservices se positionne comme l'une des entreprises de propreté parmi les leaders sur le marché gabonais. Réactivité, service de ménage professionnel, qualité du nettoyage et respect de l'environnement caractérisent nos équipes.",
+    },
+    identity: {
+      heading: "Notre identité",
+      text: "Gabon Nettoyage & Multiservices est une SUARL immatriculée au Registre du Commerce et du Crédit Mobilier sous le n° GA-LBV-01-2020-B13-00016, basée à Cité Damas, Libreville. Nous intervenons sur huit domaines de service :",
+      domains: [
+        "Nettoyage professionnel et entretien des locaux",
+        "Facility management",
+        "Désinfection, dératisation, désinsectisation",
+        "Gestion des espaces verts",
+        "Maintenance et multiservices",
+        "Logistique et support",
+        "Gestion environnementale et hygiène",
+        "Nettoyage industriel spécialisé",
+      ],
+    },
+    engagement: {
+      heading: "Notre engagement",
+      text: "Notre réseau d'agences de nettoyage professionnel vous aide à trouver la prestation de qualité dont vous avez besoin. N'hésitez pas à faire appel à notre équipe pour établir un devis gratuit et adapter votre contrat d'entretien à vos besoins de propreté.",
+    },
     qualitySection: "Qualité de la propreté à votre service",
     qualities: [
       {
@@ -96,17 +115,35 @@ const content = {
         img: work4,
       },
     ],
-    cta: "Demander un devis gratuit",
+    cta: "Demander un devis",
   },
   en: {
     crumb: "About",
-    title: "Who are we?",
-    intro: [
-      "Gabon Nettoyage & Multiservices is a company under Gabonese law providing professional services to businesses and individuals. Committed to hygiene and sanitation, it deploys a range of technical skills to serve well-being.",
-      "Since January 2020, Gabon Nettoyage & Multiservices has been ensuring pleasant and healthy work environments for occupants and the satisfaction of clients who trust us as their cleaning company for both professional and private premises.",
-      "Active in Estuaire, Port-Gentil, Moanda and Franceville, Gabon Nettoyage & Multi-services stands as one of the leading cleaning companies on the market. Reactivity, professional cleaning service, quality and respect for the environment define our teams.",
-      "Our network of professional cleaning agencies will help you find the quality service you need. Get in touch for a free quote and tailor your maintenance contract to your needs.",
-    ],
+    title: "Who we are",
+    opening:
+      "Since January 2020, Gabon Nettoyage & Multiservices (GNM) has been ensuring pleasant and healthy work environments, and guaranteeing the satisfaction of clients who trust us as their cleaning company for professional and private premises.",
+    presence: {
+      heading: "Our presence",
+      text: "Active in Estuaire, Port-Gentil, Moanda and Franceville, Gabon Nettoyage & Multiservices stands as one of the leading cleaning companies on the Gabonese market. Reactivity, professional cleaning service, quality and respect for the environment define our teams.",
+    },
+    identity: {
+      heading: "Our identity",
+      text: "Gabon Nettoyage & Multiservices is a SUARL registered with the Trade and Personal Property Credit Register (RCCM) under no. GA-LBV-01-2020-B13-00016, based in Cité Damas, Libreville. We operate across eight service domains:",
+      domains: [
+        "Professional cleaning and premises upkeep",
+        "Facility management",
+        "Disinfection, pest control, insect control",
+        "Green space management",
+        "Maintenance and multiservices",
+        "Logistics and support",
+        "Environmental management and hygiene",
+        "Specialized industrial cleaning",
+      ],
+    },
+    engagement: {
+      heading: "Our commitment",
+      text: "Our network of professional cleaning agencies will help you find the quality service you need. Feel free to contact our team for a free quote and to tailor your maintenance contract to your cleaning needs.",
+    },
     qualitySection: "Quality cleanliness at your service",
     qualities: [
       {
@@ -165,7 +202,7 @@ const content = {
         img: work4,
       },
     ],
-    cta: "Request a free quote",
+    cta: "Request a quote",
   },
 } as const;
 
@@ -178,18 +215,18 @@ export default function AboutPage() {
   const c = content[lang];
 
   useDocumentHead({
-    title: "Qui sommes-nous ? — Gabon Nettoyage & Multiservices",
+    title: "À propos de Gabon Nettoyage & Multiservices | GN&M",
     meta: [
       {
         name: "description",
         content:
-          "Découvrez Gabon Nettoyage & Multiservices : entreprise de droit gabonais spécialisée dans l'hygiène, l'assainissement et le nettoyage professionnel.",
+          "GN&M, entreprise gabonaise de nettoyage et multiservices depuis 2020, présente à Libreville, Port-Gentil, Moanda et Franceville.",
       },
-      { property: "og:title", content: "Qui sommes-nous ? — Gabon Nettoyage & Multiservices" },
+      { property: "og:title", content: "À propos de Gabon Nettoyage & Multiservices | GN&M" },
       {
         property: "og:description",
         content:
-          "Entreprise gabonaise au service des entreprises et particuliers : réactivité, RSE et innovation.",
+          "GN&M, entreprise gabonaise de nettoyage et multiservices depuis 2020, présente à Libreville, Port-Gentil, Moanda et Franceville.",
       },
     ],
   });
@@ -217,11 +254,38 @@ export default function AboutPage() {
 
       {/* Intro */}
       <section className="py-14">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 md:px-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-          <div className="space-y-5 text-[17px] leading-relaxed text-muted-foreground">
-            {c.intro.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 md:px-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+          <div className="space-y-8">
+            <p className="text-[17px] leading-relaxed text-muted-foreground">{c.opening}</p>
+
+            <div>
+              <h2 className="text-lg font-bold text-brand-green-deep">{c.presence.heading}</h2>
+              <p className="mt-2 text-[17px] leading-relaxed text-muted-foreground">
+                {c.presence.text}
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-lg font-bold text-brand-green-deep">{c.identity.heading}</h2>
+              <p className="mt-2 text-[17px] leading-relaxed text-muted-foreground">
+                {c.identity.text}
+              </p>
+              <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
+                {c.identity.domains.map((d) => (
+                  <li key={d} className="flex items-start gap-2 text-sm text-foreground/85">
+                    <Check size={16} className="mt-0.5 shrink-0 text-brand-green" />
+                    <span>{d}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-lg font-bold text-brand-green-deep">{c.engagement.heading}</h2>
+              <p className="mt-2 text-[17px] leading-relaxed text-muted-foreground">
+                {c.engagement.text}
+              </p>
+            </div>
           </div>
           <div className="relative">
             <div className="absolute -left-6 -top-6 size-40 rounded-full bg-gradient-sun opacity-30 blur-3xl" />
