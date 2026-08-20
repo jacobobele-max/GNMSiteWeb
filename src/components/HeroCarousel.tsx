@@ -76,7 +76,7 @@ export function HeroCarousel() {
                     <Button
                       asChild
                       size="lg"
-                      className="bg-gradient-brand text-primary-foreground shadow-brand hover:opacity-95"
+                      className="rounded-full bg-brand-yellow text-brand-blue-deep shadow-brand hover:opacity-95"
                     >
                       <a href={DEVIS_URL} target="_blank" rel="noopener noreferrer">
                         {t("cta.quote")} <ArrowRight className="ml-2" size={18} />

@@ -117,7 +117,7 @@ const content = {
     },
     ctaTitle: "Bénéficiez de notre expertise sur votre site",
     ctaDesc: "Audit gratuit, devis personnalisé et plan d'intervention adapté à vos enjeux.",
-    ctaBtn: "Demander un devis gratuit",
+    ctaBtn: "Demander un devis",
   },
   en: {
     crumb: "Our commitments",
@@ -207,7 +207,7 @@ const content = {
     },
     ctaTitle: "Get our expertise on your site",
     ctaDesc: "Free audit, personalized quote and intervention plan tailored to your challenges.",
-    ctaBtn: "Request a free quote",
+    ctaBtn: "Request a quote",
   },
 } as const;
 
@@ -327,7 +327,7 @@ export default function ExpertisePage() {
             href={DEVIS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-green px-8 py-4 font-semibold text-white shadow-brand transition-colors hover:bg-brand-green-deep"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-yellow px-8 py-4 font-semibold text-brand-blue-deep shadow-brand transition-all hover:scale-[1.02]"
           >
             {c.ctaBtn}
             <ChevronRight size={18} />

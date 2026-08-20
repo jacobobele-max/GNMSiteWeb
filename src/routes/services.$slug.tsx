@@ -132,7 +132,7 @@ function ServiceDetailPage({ service }: { service: Service & { category: Categor
               <Button
                 asChild
                 size="lg"
-                className="mt-8 w-full bg-brand-yellow text-brand-blue-deep hover:opacity-95"
+                className="mt-8 w-full rounded-full bg-brand-yellow text-brand-blue-deep shadow-brand hover:opacity-95"
               >
                 <a href={DEVIS_URL} target="_blank" rel="noopener noreferrer">
                   {t("cta.quote")} <ArrowRight className="ml-2" size={18} />
