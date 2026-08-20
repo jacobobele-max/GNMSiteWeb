@@ -101,7 +101,14 @@ function ServiceDetailPage({ service }: { service: Service & { category: Categor
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-foreground">
+              <p className="text-xs font-bold uppercase tracking-wider text-brand-green-deep">
+                {lang === "fr" ? "Comment ça se passe" : "How it works"}
+              </p>
+              <p className="mt-3 text-[15px] leading-relaxed text-foreground/85">
+                {service.longDescription[lang]}
+              </p>
+
+              <p className="mt-8 text-xs font-bold uppercase tracking-wider text-foreground">
                 {t("svc.modal.included")}
               </p>
               <ul className="mt-4 space-y-3">
