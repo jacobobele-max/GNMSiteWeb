@@ -52,6 +52,7 @@ const content = {
         "Gestion environnementale et hygiène",
         "Nettoyage industriel spécialisé",
       ],
+      headcount: "Notre équipe compte aujourd'hui plus d'une trentaine d'agents.",
     },
     engagement: {
       heading: "Notre engagement",
@@ -139,6 +140,7 @@ const content = {
         "Environmental management and hygiene",
         "Specialized industrial cleaning",
       ],
+      headcount: "Our team today counts more than thirty agents.",
     },
     engagement: {
       heading: "Our commitment",
@@ -278,6 +280,9 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-4 text-sm font-semibold text-foreground/85">
+                {c.identity.headcount}
+              </p>
             </div>
 
             <div>
