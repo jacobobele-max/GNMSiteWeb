@@ -40,6 +40,11 @@ export const router = createBrowserRouter([
     errorElement: <ErrorBoundaryPage />,
   },
   {
+    path: ROUTE_PATHS.references,
+    lazy: () => import("./routes/references").then((m) => ({ Component: m.default })),
+    errorElement: <ErrorBoundaryPage />,
+  },
+  {
     path: ROUTE_PATHS.villeDetail,
     lazy: () => import("./routes/nettoyage.$ville").then((m) => ({ Component: m.default })),
     errorElement: <ErrorBoundaryPage />,

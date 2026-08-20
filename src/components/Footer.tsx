@@ -67,6 +67,7 @@ export function Footer() {
                 { label: "Accueil", href: "/" },
                 { label: "Nos services", href: "/services" },
                 { label: "À propos", href: "/a-propos" },
+                { label: "Nos références", href: "/references" },
                 { label: "Contact", href: "/contact" },
               ].map((l) => (
                 <li key={l.href}>
@@ -84,15 +85,18 @@ export function Footer() {
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               {[
-                "Nettoyage bureaux",
-                "Désinfection",
-                "Espaces verts",
-                "Dératisation",
-                "Manutention",
+                { label: "Nettoyage bureaux", slug: "nettoyage-bureaux" },
+                { label: "Désinfection", slug: "desinfection-pro" },
+                { label: "Espaces verts", slug: "jardin" },
+                { label: "Dératisation", slug: "deratisation" },
+                { label: "Manutention", slug: "demenagement" },
               ].map((l) => (
-                <li key={l}>
-                  <Link to="/services" className="transition-colors hover:text-brand-yellow">
-                    {l}
+                <li key={l.slug}>
+                  <Link
+                    to={`/services/${l.slug}`}
+                    className="transition-colors hover:text-brand-yellow"
+                  >
+                    {l.label}
                   </Link>
                 </li>
               ))}
