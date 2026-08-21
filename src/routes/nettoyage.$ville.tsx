@@ -49,6 +49,9 @@ function NotFoundCity() {
 
 function CityPage({ city }: { city: CityContent }) {
   const { lang } = useI18n();
+  const featuredCategories = city.featuredCategorySlugs
+    .map((slug) => categories.find((c) => c.slug === slug))
+    .filter((c): c is (typeof categories)[number] => c !== undefined);
 
   useDocumentHead({
     title: city.title,
@@ -98,10 +101,9 @@ function CityPage({ city }: { city: CityContent }) {
             {city.highlight}
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {categories.map((cat) => (
-              <Link
+            {featuredCategories.map((cat) => (
+              <div
                 key={cat.slug}
-                to="/services"
                 className="group flex flex-col rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-brand"
               >
                 <div className="inline-flex size-11 items-center justify-center rounded-xl bg-brand-green/15 text-brand-green-deep">
@@ -111,16 +113,24 @@ function CityPage({ city }: { city: CityContent }) {
                 <p className="mt-2 text-sm text-muted-foreground">{cat.tagline[lang]}</p>
                 <ul className="mt-4 space-y-2">
                   {cat.services.slice(0, 2).map((s) => (
-                    <li key={s.slug} className="flex items-start gap-2 text-sm text-foreground/80">
-                      <Check size={16} className="mt-0.5 shrink-0 text-brand-green" />
-                      <span>{s.name[lang]}</span>
+                    <li key={s.slug}>
+                      <Link
+                        to={`/services/${s.slug}`}
+                        className="flex items-start gap-2 text-sm text-foreground/80 hover:text-brand-green"
+                      >
+                        <Check size={16} className="mt-0.5 shrink-0 text-brand-green" />
+                        <span>{s.name[lang]}</span>
+                      </Link>
                     </li>
                   ))}
                 </ul>
-                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-green group-hover:text-brand-green-deep">
+                <Link
+                  to={`/services/${cat.services[0].slug}`}
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-green group-hover:text-brand-green-deep"
+                >
                   {lang === "fr" ? "En savoir plus" : "Learn more"} <ArrowRight size={14} />
-                </span>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         </div>

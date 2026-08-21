@@ -13,6 +13,11 @@ export type CityContent = {
   presence: string;
   intro: string;
   highlight: string;
+  // Sous-ensemble + ordre des catégories de services-catalog.ts mis en avant
+  // sur la page ville, cohérent avec son profil (siège, industriel/pétrolier,
+  // minier/hospitalier, Ecobank 3D...) — évite que les 4 pages villes
+  // affichent la même grille de services dans le même ordre.
+  featuredCategorySlugs: string[];
 };
 
 export const cities: CityContent[] = [
@@ -29,6 +34,12 @@ export const cities: CityContent[] = [
       "Basé Cité Damas, notre siège social couvre l'ensemble du Grand Libreville : bureaux, résidences, commerces et sites institutionnels. C'est ici que sont coordonnées l'ensemble de nos interventions multi-villes.",
     highlight:
       "Zone de couverture la plus dense, avec équipes dédiées aux contrats entreprises et particuliers.",
+    featuredCategorySlugs: [
+      "nettoyage-courant",
+      "desinfection-hygiene",
+      "entretien-exterieur",
+      "services-support",
+    ],
   },
   {
     slug: "port-gentil",
@@ -42,6 +53,12 @@ export const cities: CityContent[] = [
     intro:
       "Capitale économique et pétrolière du Gabon, Port-Gentil concentre nos interventions auprès d'acteurs industriels et logistiques exigeant des standards HSE stricts.",
     highlight: "Expertise nettoyage industriel et sites à contraintes d'accès réglementées.",
+    featuredCategorySlugs: [
+      "nettoyage-specialise",
+      "desinfection-hygiene",
+      "gestion-dechets",
+      "entretien-exterieur",
+    ],
   },
   {
     slug: "moanda",
@@ -56,6 +73,12 @@ export const cities: CityContent[] = [
       "À Moanda, GN&M assure depuis plus de 3 ans le nettoyage de l'hôpital COMILOG/HMA, une référence en matière d'hygiène hospitalière et de désinfection en milieu minier.",
     highlight:
       "Contrat de référence en milieu hospitalier et minier, exécuté en continu depuis 2020.",
+    featuredCategorySlugs: [
+      "desinfection-hygiene",
+      "gestion-dechets",
+      "nettoyage-specialise",
+      "nettoyage-courant",
+    ],
   },
   {
     slug: "franceville",
@@ -69,6 +92,12 @@ export const cities: CityContent[] = [
     intro:
       "À Franceville, nous accompagnons entreprises et institutions du Haut-Ogooué avec les mêmes standards de qualité que sur nos autres sites, adaptés aux réalités logistiques de la région.",
     highlight: "Couverture Haut-Ogooué avec équipes locales formées aux procédures GN&M.",
+    featuredCategorySlugs: [
+      "desinfection-hygiene",
+      "gestion-dechets",
+      "nettoyage-courant",
+      "services-support",
+    ],
   },
 ];
 
