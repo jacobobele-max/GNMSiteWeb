@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useDocumentHead } from "@/lib/use-document-head";
 
 export function NotFoundPage() {
+  useDocumentHead({ title: "Page introuvable — Gabon Nettoyage & Multiservices" });
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">

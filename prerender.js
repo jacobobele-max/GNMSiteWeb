@@ -65,10 +65,31 @@ async function main() {
   console.log("→ Lancement du navigateur headless...");
   const browser = await puppeteer.launch({ headless: true });
 
+  // Widgets tiers (ex. Elfsight) : leur script n'est de toute façon pas censé
+  // être figé dans le HTML statique (contenu chargé en JS côté client, non
+  // indexable). Pire, on a constaté qu'un widget en cours de chargement
+  // pendant le pré-rendu peut laisser des traces (préconnexions, styles)
+  // qui polluent les pages suivantes dans la même session navigateur — donc
+  // on bloque ces requêtes pendant le pré-rendu ; le tag <script> reste bien
+  // dans le HTML généré, et se chargera normalement chez le vrai visiteur.
+  const BLOCKED_HOSTS = ["elfsight.com", "elfsightcdn.com"];
+  async function blockThirdPartyWidgets(page) {
+    await page.setRequestInterception(true);
+    page.on("request", (req) => {
+      const host = new URL(req.url()).hostname;
+      if (BLOCKED_HOSTS.some((h) => host === h || host.endsWith(`.${h}`))) {
+        req.abort();
+      } else {
+        req.continue();
+      }
+    });
+  }
+
   const results = [];
 
   for (const route of ROUTES) {
     const page = await browser.newPage();
+    await blockThirdPartyWidgets(page);
     const url = baseUrl + route;
     console.log(`  · Rendu de ${route} ...`);
     await page.goto(url, { waitUntil: "networkidle0", timeout: 30000 });
@@ -94,12 +115,19 @@ async function main() {
   // ErrorDocument 404 /404.html (voir public/.htaccess).
   console.log("  · Rendu de la page 404 ...");
   const notFoundPage = await browser.newPage();
+  await blockThirdPartyWidgets(notFoundPage);
   await notFoundPage.goto(`${baseUrl}/404-introuvable`, {
     waitUntil: "networkidle0",
     timeout: 30000,
   });
   await new Promise((r) => setTimeout(r, 500));
-  const notFoundHtml = await notFoundPage.content();
+  // Filet de sécurité : la 404 ne doit structurellement jamais embarquer de
+  // widget tiers (elle n'affiche pas la home). On retire toute balise
+  // <script>/<div> liée à un domaine de widget tiers si elle s'y trouvait.
+  const notFoundHtml = (await notFoundPage.content()).replace(
+    /<script[^>]*(?:elfsight)[^>]*><\/script>/gi,
+    "",
+  );
   await notFoundPage.close();
   fs.writeFileSync(path.join("dist", "404.html"), notFoundHtml, "utf-8");
   results.push({
