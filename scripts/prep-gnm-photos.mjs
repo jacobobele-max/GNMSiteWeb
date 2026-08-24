@@ -30,6 +30,12 @@ const jobs = [
     width: 1200,
     quality: 80,
   },
+  {
+    src: "F:\\Copy of Nouveau dossier GNM\\Nouveau dossier photos\\GN pro\\_DND3673.jpg",
+    out: "work-11.webp",
+    width: 1300,
+    quality: 80,
+  },
 ];
 
 for (const job of jobs) {

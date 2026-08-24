@@ -5,14 +5,16 @@ import {
   Leaf,
   Recycle,
   Users,
+  Wrench,
   type LucideIcon,
 } from "lucide-react";
 import hero1 from "@/assets/hero-1.webp";
-import hero2 from "@/assets/hero-2.webp";
 import hero3 from "@/assets/hero-3.webp";
 import work1 from "@/assets/work-1.webp";
-import work2 from "@/assets/work-2.webp";
 import work4 from "@/assets/work-4.webp";
+import work9 from "@/assets/work-9.webp";
+import work12 from "@/assets/work-12.webp";
+import work13 from "@/assets/work-13.webp";
 
 export type Bi = { fr: string; en: string };
 
@@ -173,7 +175,7 @@ export const categories: Category[] = [
     icon: ShieldPlus,
     name: { fr: "Désinfection & Hygiène", en: "Disinfection & Hygiene" },
     tagline: { fr: "Protocoles sanitaires certifiés.", en: "Certified sanitary protocols." },
-    image: hero2,
+    image: hero3,
     services: [
       {
         slug: "desinfection-domicile",
@@ -237,7 +239,7 @@ export const categories: Category[] = [
       fr: "Jardins, espaces verts et extérieurs.",
       en: "Gardens, green spaces and outdoors.",
     },
-    image: hero3,
+    image: work4,
     services: [
       {
         slug: "jardin",
@@ -302,7 +304,7 @@ export const categories: Category[] = [
       fr: "Collecte, tri et recyclage responsable.",
       en: "Responsible collection, sorting and recycling.",
     },
-    image: work2,
+    image: work12,
     services: [
       {
         slug: "collecte-tri",
@@ -363,7 +365,7 @@ export const categories: Category[] = [
     icon: Users,
     name: { fr: "Services support", en: "Support services" },
     tagline: { fr: "Personnel qualifié et logistique.", en: "Qualified staff and logistics." },
-    image: work4,
+    image: work13,
     services: [
       {
         slug: "demenagement",
@@ -414,6 +416,108 @@ export const categories: Category[] = [
         bullets: [
           { fr: "Modules certifiants", en: "Certifying modules" },
           { fr: "Formateurs experts", en: "Expert trainers" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "multiservices-techniques",
+    icon: Wrench,
+    name: { fr: "Multiservices techniques", en: "Technical multiservices" },
+    tagline: {
+      fr: "Manutention, réparations et corps d'état pour vos locaux.",
+      en: "Handling, repairs and trades for your premises.",
+    },
+    image: work9,
+    services: [
+      {
+        slug: "petite-manutention",
+        name: { fr: "Petite manutention", en: "Light handling" },
+        description: {
+          fr: "Levage, portage et petites installations : nos équipes s'occupent des tâches physiques du quotidien.",
+          en: "Lifting, carrying and small installs — our teams handle the everyday physical tasks.",
+        },
+        longDescription: {
+          fr: "Nos agents interviennent pour le port de charges, le montage de mobilier, l'installation d'équipements ou le déplacement ponctuel de matériel dans vos locaux. Cette prestation s'ajoute souvent à un contrat d'entretien existant ou se commande à la demande, sans engagement de durée.",
+          en: "Our agents handle carrying loads, assembling furniture, installing equipment or moving material within your premises on demand. This service is often added to an existing cleaning contract or ordered on a one-off basis, with no long-term commitment.",
+        },
+        audience: "tous",
+        bullets: [
+          { fr: "Port de charges", en: "Load carrying" },
+          { fr: "Montage de mobilier", en: "Furniture assembly" },
+          { fr: "Installation d'équipements", en: "Equipment installation" },
+        ],
+      },
+      {
+        slug: "maintenance-reparation",
+        name: { fr: "Maintenance et réparation", en: "Maintenance & repairs" },
+        description: {
+          fr: "Petits travaux d'entretien et de réparation pour garder vos locaux en bon état.",
+          en: "Small upkeep and repair jobs to keep your premises in good condition.",
+        },
+        longDescription: {
+          fr: "Nos techniciens interviennent pour des réparations courantes (serrurerie légère, fixations, petite menuiserie, remplacement de pièces d'usure) afin d'éviter que de petits problèmes ne s'aggravent. Les interventions sont planifiées ou déclenchées ponctuellement selon vos besoins.",
+          en: "Our technicians handle routine repairs (light locksmithing, fixings, small carpentry, replacing worn parts) to stop small issues from growing. Work is scheduled or triggered on demand based on your needs.",
+        },
+        audience: "tous",
+        bullets: [
+          { fr: "Réparations courantes", en: "Routine repairs" },
+          { fr: "Petite menuiserie", en: "Small carpentry" },
+          { fr: "Remplacement de pièces d'usure", en: "Worn-part replacement" },
+        ],
+      },
+      {
+        slug: "electricite",
+        name: { fr: "Électricité", en: "Electrical work" },
+        description: {
+          fr: "Dépannage et petits travaux électriques réalisés par des techniciens qualifiés.",
+          en: "Troubleshooting and small electrical jobs by qualified technicians.",
+        },
+        longDescription: {
+          fr: "Nos techniciens qualifiés interviennent pour le dépannage de pannes courantes, le remplacement de prises, interrupteurs et luminaires, ainsi que de petites installations électriques. Chaque intervention respecte les normes de sécurité en vigueur.",
+          en: "Our qualified technicians handle troubleshooting of common faults, replacement of sockets, switches and light fixtures, as well as small electrical installations. Every job follows current safety standards.",
+        },
+        audience: "tous",
+        bullets: [
+          { fr: "Dépannage électrique", en: "Electrical troubleshooting" },
+          { fr: "Remplacement prises & luminaires", en: "Socket & fixture replacement" },
+          { fr: "Petites installations", en: "Small installations" },
+        ],
+      },
+      {
+        slug: "plomberie",
+        name: { fr: "Plomberie", en: "Plumbing" },
+        description: {
+          fr: "Fuites, sanitaires, robinetterie : des interventions rapides pour éviter les dégâts.",
+          en: "Leaks, fixtures, taps — fast fixes to prevent damage.",
+        },
+        longDescription: {
+          fr: "Nos plombiers interviennent pour la réparation de fuites, le débouchage de canalisations et le remplacement de robinetterie ou d'équipements sanitaires. Une intervention rapide limite les dégâts des eaux et les désagréments pour vos occupants.",
+          en: "Our plumbers handle leak repairs, drain unclogging and replacement of taps or bathroom fixtures. A quick response limits water damage and disruption for your occupants.",
+        },
+        audience: "tous",
+        bullets: [
+          { fr: "Réparation de fuites", en: "Leak repair" },
+          { fr: "Débouchage de canalisations", en: "Drain unclogging" },
+          { fr: "Remplacement robinetterie", en: "Tap replacement" },
+        ],
+      },
+      {
+        slug: "peinture",
+        name: { fr: "Peinture", en: "Painting" },
+        description: {
+          fr: "Rafraîchissement et remise en peinture de vos murs et menuiseries.",
+          en: "Refreshing and repainting your walls and woodwork.",
+        },
+        longDescription: {
+          fr: "Nos équipes assurent la préparation des surfaces (rebouchage, ponçage), puis l'application de peinture sur murs, plafonds et menuiseries, avec un choix de finitions adapté à vos espaces. Nous protégeons systématiquement le mobilier et les sols avant intervention.",
+          en: "Our teams prepare surfaces (filling, sanding), then apply paint to walls, ceilings and woodwork, with a choice of finishes suited to your spaces. Furniture and floors are systematically protected before work begins.",
+        },
+        audience: "tous",
+        bullets: [
+          { fr: "Préparation des surfaces", en: "Surface preparation" },
+          { fr: "Peinture murs & plafonds", en: "Wall & ceiling painting" },
+          { fr: "Protection mobilier & sols", en: "Furniture & floor protection" },
         ],
       },
     ],

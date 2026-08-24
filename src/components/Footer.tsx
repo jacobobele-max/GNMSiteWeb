@@ -90,6 +90,8 @@ export function Footer() {
                 { label: "Espaces verts", slug: "jardin" },
                 { label: "Dératisation", slug: "deratisation" },
                 { label: "Manutention", slug: "demenagement" },
+                { label: "Électricité & plomberie", slug: "electricite" },
+                { label: "Peinture", slug: "peinture" },
               ].map((l) => (
                 <li key={l.slug}>
                   <Link

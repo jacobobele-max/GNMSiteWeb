@@ -23,11 +23,11 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
-import hero2 from "@/assets/hero-2.webp";
 import work1 from "@/assets/work-1.webp";
 import work2 from "@/assets/work-2.webp";
 import work3 from "@/assets/work-3.webp";
 import work4 from "@/assets/work-4.webp";
+import work11 from "@/assets/work-11.webp";
 
 const content = {
   fr: {
@@ -296,8 +296,8 @@ export default function AboutPage() {
             <div className="absolute -left-6 -top-6 size-40 rounded-full bg-gradient-sun opacity-30 blur-3xl" />
             <div className="relative overflow-hidden rounded-3xl shadow-brand ring-1 ring-border">
               <img
-                src={hero2}
-                alt="Équipe Gabon Nettoyage & Multiservices"
+                src={work11}
+                alt="Équipe Gabon Nettoyage & Multiservices avant une mission"
                 className="h-full w-full object-cover"
                 loading="lazy"
               />

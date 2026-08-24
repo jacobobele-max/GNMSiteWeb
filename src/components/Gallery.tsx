@@ -12,7 +12,7 @@ import w10 from "@/assets/work-10.webp";
 
 const items = [
   { img: w1, label: "Grand nettoyage de sols", span: "md:col-span-2 md:row-span-1" },
-  { img: w2, label: "Nettoyage extérieur", span: "md:row-span-2" },
+  { img: w2, label: "Désinfection d'accueil", span: "md:row-span-2" },
   { img: w3, label: "Désinfection de bureaux", span: "md:col-span-2" },
   { img: w4, label: "Entretien espaces verts", span: "" },
   { img: w5, label: "Nettoyage résidentiel", span: "" },

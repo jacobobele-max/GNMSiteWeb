@@ -153,15 +153,16 @@ const services: Record<
       en: { t: "Pest control (3D)", d: "Rats, insects, termites — controlled, expert protocols." },
     },
     {
-      // Pas de service catalogue distinct pour la "manutention" — on renvoie
-      // vers "demenagement" qui couvre déjà ce contenu (voir services-catalog.ts).
-      slug: "demenagement",
+      slug: "maintenance-reparation",
       icon: Sparkles,
       fr: {
-        t: "Manutention & logistique",
-        d: "Manutention, déménagement d'entreprise et installation, en toute sécurité.",
+        t: "Maintenance & réparation",
+        d: "Électricité, plomberie, peinture et petits travaux pour vos locaux.",
       },
-      en: { t: "Logistics & handling", d: "Corporate moves, handling and installation, safely." },
+      en: {
+        t: "Maintenance & repairs",
+        d: "Electrical, plumbing, painting and small jobs for your premises.",
+      },
     },
   ],
 };
