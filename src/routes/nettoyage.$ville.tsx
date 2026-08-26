@@ -8,7 +8,7 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
-import { getCityBySlug, type CityContent } from "@/lib/cities";
+import { cities, getCityBySlug, type CityContent } from "@/lib/cities";
 import { categories } from "@/lib/services-catalog";
 
 export default function NettoyageVilleRoute() {
@@ -132,6 +132,29 @@ function CityPage({ city }: { city: CityContent }) {
                 </Link>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Autres villes */}
+      <section className="pb-16">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+            {lang === "fr" ? "Nos autres implantations" : "Our other locations"}
+          </h2>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {cities
+              .filter((c) => c.slug !== city.slug)
+              .map((c) => (
+                <Link
+                  key={c.slug}
+                  to={`/nettoyage/${c.slug}`}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green"
+                >
+                  {lang === "fr" ? `Nettoyage à ${c.name}` : `Cleaning in ${c.name}`}
+                  <ArrowRight size={14} />
+                </Link>
+              ))}
           </div>
         </div>
       </section>

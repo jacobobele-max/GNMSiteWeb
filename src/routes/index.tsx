@@ -13,14 +13,17 @@ import { useDocumentHead } from "@/lib/use-document-head";
 
 export default function Index() {
   useDocumentHead({
-    title: "Gabon Nettoyage & Multiservices — Propreté & services au Gabon",
+    title: "Entreprise de Nettoyage Professionnel au Gabon | GN&M Libreville",
     meta: [
       {
         name: "description",
         content:
-          "Société gabonaise de nettoyage et multiservices : bureaux, résidentiel, désinfection, espaces verts. Engagement éco-responsable et produits bio.",
+          "GN&M, société de nettoyage et facility management à Libreville, Port-Gentil, Moanda et Franceville. Bureaux, résidentiel, désinfection, espaces verts. Devis gratuit.",
       },
-      { property: "og:title", content: "Gabon Nettoyage & Multiservices" },
+      {
+        property: "og:title",
+        content: "Entreprise de Nettoyage Professionnel au Gabon | GN&M Libreville",
+      },
       {
         property: "og:description",
         content: "Propreté professionnelle, écologique et discrète au Gabon. Demandez votre devis.",

@@ -26,8 +26,8 @@ const dict: Dict = {
   // Hero slides
   "hero.eyebrow.1": { fr: "Propreté professionnelle", en: "Professional cleanliness" },
   "hero.title.1": {
-    fr: "Des espaces impeccables, une équipe d'experts",
-    en: "Impeccable spaces, an expert team",
+    fr: "Entreprise de nettoyage professionnel au Gabon",
+    en: "Professional cleaning company in Gabon",
   },
   "hero.sub.1": {
     fr: "Nettoyage de bureaux, résidences et chantiers au Gabon, avec rigueur et discrétion.",
