@@ -23,6 +23,11 @@ dist-ssr
 # Contains live hosting credentials — never commit
 HOSTING.md
 
+# Local env vars (GA4 measurement ID, etc.) — never commit
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

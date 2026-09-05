@@ -1,0 +1,53 @@
+name: Publier les articles sur Facebook/Instagram
+
+on:
+  schedule:
+    # Tous les jours à 8h00 (heure de Libreville, UTC+1) = 7h00 UTC
+    - cron: "0 7 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vérifier que les identifiants Facebook sont configurés
+        id: check
+        run: |
+          if [ -z "${{ secrets.FB_PAGE_ID }}" ] || [ -z "${{ secrets.FB_PAGE_ACCESS_TOKEN }}" ]; then
+            echo "FB_PAGE_ID / FB_PAGE_ACCESS_TOKEN non configurés dans les secrets du dépôt — rien à publier, on s'arrête proprement."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.ready == 'true'
+        with:
+          node-version: 24
+
+      - name: Installer les dépendances
+        if: steps.check.outputs.ready == 'true'
+        run: npm ci
+
+      - name: Build du site (nécessaire pour récupérer les images de couverture)
+        if: steps.check.outputs.ready == 'true'
+        run: npm run build:seo
+
+      - name: Publier les nouveaux articles
+        if: steps.check.outputs.ready == 'true'
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: node scripts/publish-to-social.mjs
+
+      - name: Committer le registre des publications (scripts/.social-published.json)
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/.social-published.json
+          git diff --cached --quiet || git commit -m "chore(social): mise à jour du registre de publication"
+          git push
