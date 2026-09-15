@@ -25,6 +25,12 @@ export const router = createBrowserRouter([
     errorElement: <ErrorBoundaryPage />,
   },
   {
+    path: ROUTE_PATHS.formulesResidentielles,
+    lazy: () =>
+      import("./routes/formules-residentielles").then((m) => ({ Component: m.default })),
+    errorElement: <ErrorBoundaryPage />,
+  },
+  {
     path: ROUTE_PATHS.actualites,
     lazy: () => import("./routes/actualites.index").then((m) => ({ Component: m.default })),
     errorElement: <ErrorBoundaryPage />,

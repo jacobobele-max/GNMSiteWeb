@@ -66,6 +66,7 @@ export function Footer() {
               {[
                 { label: "Accueil", href: "/" },
                 { label: "Nos services", href: "/services" },
+                { label: "Formules résidentielles", href: "/formules-residentielles" },
                 { label: "À propos", href: "/a-propos" },
                 { label: "Nos références", href: "/references" },
                 { label: "Contact", href: "/contact" },

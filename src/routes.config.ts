@@ -6,6 +6,7 @@ export const ROUTE_PATHS = {
   services: "/services",
   notreExpertise: "/notre-expertise",
   aPropos: "/a-propos",
+  formulesResidentielles: "/formules-residentielles",
   actualites: "/actualites",
   actualiteDetail: "/actualites/:slug",
   references: "/references",

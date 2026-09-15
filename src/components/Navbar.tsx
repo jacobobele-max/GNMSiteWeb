@@ -26,6 +26,7 @@ const navItems: NavItem[] = [
     ],
   },
   { key: "nav.about", href: "/a-propos" },
+  { key: "nav.formulas", href: "/formules-residentielles" },
   { key: "nav.news", href: "/actualites" },
 
   { key: "nav.contact", href: "/contact" },

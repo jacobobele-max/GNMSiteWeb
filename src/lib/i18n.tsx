@@ -10,6 +10,7 @@ const dict: Dict = {
   "nav.services": { fr: "Services", en: "Services" },
   "nav.commitments": { fr: "Nos engagements", en: "Our commitments" },
   "nav.about": { fr: "Qui sommes-nous ?", en: "About us" },
+  "nav.formulas": { fr: "Formules résidentielles", en: "Home plans" },
   "nav.news": { fr: "Actualités", en: "News" },
   "nav.recycling": { fr: "Recyclage", en: "Recycling" },
   "nav.contact": { fr: "Contact", en: "Contact" },
