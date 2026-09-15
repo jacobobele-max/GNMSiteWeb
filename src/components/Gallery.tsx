@@ -12,6 +12,10 @@ import w10 from "@/assets/work-10.webp";
 import w14 from "@/assets/work-14.webp";
 import w15 from "@/assets/work-15.webp";
 import w16 from "@/assets/work-16.webp";
+import w17 from "@/assets/work-17.webp";
+import w18 from "@/assets/work-18.webp";
+import w19 from "@/assets/work-19.webp";
+import w20 from "@/assets/work-20.webp";
 
 const items = [
   { img: w1, label: "Grand nettoyage de sols", span: "md:col-span-2 md:row-span-1" },
@@ -27,6 +31,10 @@ const items = [
   { img: w14, label: "Désinfection de véhicules", span: "" },
   { img: w15, label: "Nettoyage de villa", span: "" },
   { img: w16, label: "Brumisation professionnelle", span: "" },
+  { img: w17, label: "Désinfection de villa résidentielle", span: "" },
+  { img: w18, label: "Entretien de terrasse et jardin", span: "" },
+  { img: w19, label: "Lustrage de sol professionnel", span: "" },
+  { img: w20, label: "Brumisation d'intérieur", span: "" },
 ];
 
 export function Gallery() {

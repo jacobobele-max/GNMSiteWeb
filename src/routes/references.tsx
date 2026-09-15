@@ -25,6 +25,9 @@ const references = [
   "Sauce Créole",
   "Bananas Plus",
   "Children's House",
+  "Lycée Public Français Heye (Ndjolé)",
+  "Collège Évangélique d'Owendo",
+  "Lycée d'État Charles Mefane (Lambaréné)",
 ];
 
 const content = {

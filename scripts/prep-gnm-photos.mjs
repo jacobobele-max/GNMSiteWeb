@@ -54,6 +54,54 @@ const jobs = [
     width: 1200,
     quality: 78,
   },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20210125-WA0019.jpg",
+    out: "work-17.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200712-WA0006.jpg",
+    out: "work-18.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200716-WA0023.jpg",
+    out: "work-19.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200522-WA0010.jpg",
+    out: "work-20.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200705-WA0003.jpg",
+    out: "work-21.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200411-WA0003.jpg",
+    out: "work-22.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200709-WA0176.jpg",
+    out: "work-23.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200602-WA0000.jpg",
+    out: "work-24.webp",
+    width: 1200,
+    quality: 78,
+  },
 ];
 
 for (const job of jobs) {
