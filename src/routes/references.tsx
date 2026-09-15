@@ -21,7 +21,9 @@ const references = [
   "SGEPP",
   "Ecobank",
   "Complexe Scolaire Privé Michel Dirat",
+  "Lycée Aubin Georges Modjeckou",
   "Sauce Créole",
+  "Bananas Plus",
   "Children's House",
 ];
 

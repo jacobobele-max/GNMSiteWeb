@@ -36,6 +36,24 @@ const jobs = [
     width: 1300,
     quality: 80,
   },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200525-WA0033.jpg",
+    out: "work-14.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200712-WA0016.jpg",
+    out: "work-15.webp",
+    width: 1200,
+    quality: 78,
+  },
+  {
+    src: "C:\\Users\\hp\\Downloads\\Photos-1-001\\IMG-20200522-WA0011.jpg",
+    out: "work-16.webp",
+    width: 1200,
+    quality: 78,
+  },
 ];
 
 for (const job of jobs) {
