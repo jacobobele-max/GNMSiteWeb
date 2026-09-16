@@ -17,6 +17,15 @@ const navItems: NavItem[] = [
   { key: "nav.home", href: "/" },
   { key: "nav.services", href: "/services", megaCategories: true },
   {
+    key: "nav.sectors",
+    href: "/secteurs/institutionnel",
+    simple: [
+      { key: "nav.sector.institutionnel", href: "/secteurs/institutionnel" },
+      { key: "nav.sector.industriel", href: "/secteurs/industriel-minier" },
+      { key: "nav.sector.particuliers", href: "/secteurs/particuliers" },
+    ],
+  },
+  {
     key: "nav.commitments",
     href: "/notre-expertise",
     simple: [

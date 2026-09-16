@@ -11,6 +11,7 @@ import { useDocumentHead } from "@/lib/use-document-head";
 const references = [
   "COMILOG",
   "SOGARA",
+  "Gras Savoye",
   "Nouvelle Gabon Mining",
   "Ministère de l'Économie et des Participations",
   "Ministère de l'Éducation Nationale",

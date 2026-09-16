@@ -8,6 +8,10 @@ const dict: Dict = {
   // Nav
   "nav.home": { fr: "Accueil", en: "Home" },
   "nav.services": { fr: "Services", en: "Services" },
+  "nav.sectors": { fr: "Secteurs", en: "Sectors" },
+  "nav.sector.institutionnel": { fr: "Institutionnel", en: "Public sector" },
+  "nav.sector.industriel": { fr: "Industriel & Minier", en: "Industrial & Mining" },
+  "nav.sector.particuliers": { fr: "Particuliers", en: "Individuals" },
   "nav.commitments": { fr: "Nos engagements", en: "Our commitments" },
   "nav.about": { fr: "Qui sommes-nous ?", en: "About us" },
   "nav.formulas": { fr: "Formules résidentielles", en: "Home plans" },

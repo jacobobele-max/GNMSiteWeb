@@ -6,6 +6,7 @@ import { useI18n } from "@/lib/i18n";
 const partners = [
   "COMILOG",
   "SOGARA",
+  "Gras Savoye",
   "Nouvelle Gabon Mining",
   "GSEZ",
   "Ecobank",

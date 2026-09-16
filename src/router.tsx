@@ -31,6 +31,23 @@ export const router = createBrowserRouter([
     errorElement: <ErrorBoundaryPage />,
   },
   {
+    path: ROUTE_PATHS.secteurInstitutionnel,
+    lazy: () =>
+      import("./routes/secteur-institutionnel").then((m) => ({ Component: m.default })),
+    errorElement: <ErrorBoundaryPage />,
+  },
+  {
+    path: ROUTE_PATHS.secteurIndustrielMinier,
+    lazy: () =>
+      import("./routes/secteur-industriel-minier").then((m) => ({ Component: m.default })),
+    errorElement: <ErrorBoundaryPage />,
+  },
+  {
+    path: ROUTE_PATHS.secteurParticuliers,
+    lazy: () => import("./routes/secteur-particuliers").then((m) => ({ Component: m.default })),
+    errorElement: <ErrorBoundaryPage />,
+  },
+  {
     path: ROUTE_PATHS.actualites,
     lazy: () => import("./routes/actualites.index").then((m) => ({ Component: m.default })),
     errorElement: <ErrorBoundaryPage />,

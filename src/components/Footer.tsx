@@ -66,6 +66,8 @@ export function Footer() {
               {[
                 { label: "Accueil", href: "/" },
                 { label: "Nos services", href: "/services" },
+                { label: "Secteur institutionnel", href: "/secteurs/institutionnel" },
+                { label: "Industriel & Minier", href: "/secteurs/industriel-minier" },
                 { label: "Formules résidentielles", href: "/formules-residentielles" },
                 { label: "À propos", href: "/a-propos" },
                 { label: "Nos références", href: "/references" },
