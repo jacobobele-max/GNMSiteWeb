@@ -149,7 +149,7 @@ export function Footer() {
               </li>
               <li className="flex gap-3">
                 <Clock className="mt-0.5 size-4 shrink-0 text-brand-green" />
-                Lun – Sam : 7h00 – 19h00
+                24h/24, 7j/7
               </li>
             </ul>
           </div>

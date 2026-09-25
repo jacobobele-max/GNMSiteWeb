@@ -73,7 +73,7 @@ export default function ContactPage() {
     {
       icon: Clock,
       title: "Horaires d'ouverture",
-      value: "Lun – Ven : 9h00 – 17h00\nSam : 9h00 – 14h00",
+      value: "24h/24, 7j/7",
     },
   ];
 
