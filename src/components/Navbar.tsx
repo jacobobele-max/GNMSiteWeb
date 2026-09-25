@@ -43,6 +43,7 @@ const navItems: NavItem[] = [
       { key: "nav.formulas.professionnelles", href: "/formules-professionnelles" },
     ],
   },
+  { key: "nav.gabonClean", href: "/gabon-clean" },
   { key: "nav.news", href: "/actualites" },
 
   { key: "nav.contact", href: "/contact" },

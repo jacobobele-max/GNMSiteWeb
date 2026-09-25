@@ -8,6 +8,7 @@ export const ROUTE_PATHS = {
   aPropos: "/a-propos",
   formulesResidentielles: "/formules-residentielles",
   formulesProfessionnelles: "/formules-professionnelles",
+  gabonClean: "/gabon-clean",
   secteurInstitutionnel: "/secteurs/institutionnel",
   secteurIndustrielMinier: "/secteurs/industriel-minier",
   secteurParticuliers: "/secteurs/particuliers",

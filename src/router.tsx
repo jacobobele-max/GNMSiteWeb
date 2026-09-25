@@ -37,6 +37,11 @@ export const router = createBrowserRouter([
     errorElement: <ErrorBoundaryPage />,
   },
   {
+    path: ROUTE_PATHS.gabonClean,
+    lazy: () => import("./routes/gabon-clean").then((m) => ({ Component: m.default })),
+    errorElement: <ErrorBoundaryPage />,
+  },
+  {
     path: ROUTE_PATHS.secteurInstitutionnel,
     lazy: () =>
       import("./routes/secteur-institutionnel").then((m) => ({ Component: m.default })),

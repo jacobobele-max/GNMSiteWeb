@@ -17,6 +17,7 @@ const dict: Dict = {
   "nav.formulas": { fr: "Formules", en: "Plans" },
   "nav.formulas.residentielles": { fr: "Formules résidentielles", en: "Home plans" },
   "nav.formulas.professionnelles": { fr: "Formules professionnelles", en: "Business plans" },
+  "nav.gabonClean": { fr: "Gabon Clean", en: "Gabon Clean" },
   "nav.news": { fr: "Actualités", en: "News" },
   "nav.recycling": { fr: "Recyclage", en: "Recycling" },
   "nav.contact": { fr: "Contact", en: "Contact" },
