@@ -20,7 +20,7 @@ const gallery = [work17, work18, work19, work20, work21];
 const content = {
   fr: {
     crumb: "Particuliers",
-    eyebrow: "Résidentiel · Libreville, Owendo & Akanda",
+    eyebrow: "Résidentiel · Libreville, Owendo, Akanda & Ntoum",
     title: "Le nettoyage de votre maison, sans y penser",
     intro:
       "Ménage régulier, lavage-repassage, désinfection ou grand nettoyage ponctuel : nos formules résidentielles s'adaptent à votre rythme de vie, avec une équipe fixe et de confiance.",
@@ -42,7 +42,7 @@ const content = {
         {
           icon: CalendarClock,
           title: "Formules flexibles",
-          desc: "Essentielle, Confort ou Premium — un rythme d'entretien adapté à votre budget.",
+          desc: "Nouveau Départ, Sérénité ou Confort Plus — une réponse adaptée à chaque situation.",
         },
         {
           icon: Sparkles,
@@ -53,12 +53,12 @@ const content = {
     },
     galleryTitle: "Nos interventions chez les particuliers",
     ctaTitle: "Découvrez nos formules résidentielles",
-    ctaDesc: "Essentielle, Confort ou Premium — trouvez la formule adaptée à votre foyer.",
-    ctaBtn: "Voir les formules et tarifs",
+    ctaDesc: "Nouveau Départ, Sérénité ou Confort Plus — trouvez la formule adaptée à votre situation.",
+    ctaBtn: "Voir les formules",
   },
   en: {
     crumb: "Individuals",
-    eyebrow: "Residential · Libreville, Owendo & Akanda",
+    eyebrow: "Residential · Libreville, Owendo, Akanda & Ntoum",
     title: "Your home, cleaned — without the hassle",
     intro:
       "Regular cleaning, laundry and ironing, disinfection or a one-off deep clean: our home plans adapt to your pace of life, with a trusted, fixed team.",
@@ -80,7 +80,7 @@ const content = {
         {
           icon: CalendarClock,
           title: "Flexible plans",
-          desc: "Essential, Comfort or Premium — a pace that fits your budget.",
+          desc: "Fresh Start, Serenity or Comfort Plus — a plan fit for every situation.",
         },
         {
           icon: Sparkles,
@@ -91,8 +91,8 @@ const content = {
     },
     galleryTitle: "Our work in private homes",
     ctaTitle: "Discover our home plans",
-    ctaDesc: "Essential, Comfort or Premium — find the plan that fits your home.",
-    ctaBtn: "See plans & pricing",
+    ctaDesc: "Fresh Start, Serenity or Comfort Plus — find the plan that fits your situation.",
+    ctaBtn: "See our plans",
   },
 } as const;
 
@@ -101,16 +101,16 @@ export default function SecteurParticuliersPage() {
   const c = content[lang];
 
   useDocumentHead({
-    title: "Nettoyage résidentiel à Libreville, Owendo & Akanda | GN&M",
+    title: "Nettoyage résidentiel à Libreville, Owendo, Akanda & Ntoum | GN&M",
     meta: [
       {
         name: "description",
         content:
-          "Ménage, lavage-repassage et désinfection pour particuliers au Gabon : équipe fixe, produits sûrs, formules flexibles Essentielle, Confort et Premium.",
+          "Ménage, lavage-repassage et désinfection pour particuliers au Gabon : équipe fixe, produits sûrs, formules flexibles Nouveau Départ, Sérénité et Confort Plus.",
       },
       {
         property: "og:title",
-        content: "Nettoyage résidentiel à Libreville, Owendo & Akanda | GN&M",
+        content: "Nettoyage résidentiel à Libreville, Owendo, Akanda & Ntoum | GN&M",
       },
       {
         property: "og:description",

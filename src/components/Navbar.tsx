@@ -35,7 +35,14 @@ const navItems: NavItem[] = [
     ],
   },
   { key: "nav.about", href: "/a-propos" },
-  { key: "nav.formulas", href: "/formules-residentielles" },
+  {
+    key: "nav.formulas",
+    href: "/formules-residentielles",
+    simple: [
+      { key: "nav.formulas.residentielles", href: "/formules-residentielles" },
+      { key: "nav.formulas.professionnelles", href: "/formules-professionnelles" },
+    ],
+  },
   { key: "nav.news", href: "/actualites" },
 
   { key: "nav.contact", href: "/contact" },

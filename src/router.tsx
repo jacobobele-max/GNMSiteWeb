@@ -31,6 +31,12 @@ export const router = createBrowserRouter([
     errorElement: <ErrorBoundaryPage />,
   },
   {
+    path: ROUTE_PATHS.formulesProfessionnelles,
+    lazy: () =>
+      import("./routes/formules-professionnelles").then((m) => ({ Component: m.default })),
+    errorElement: <ErrorBoundaryPage />,
+  },
+  {
     path: ROUTE_PATHS.secteurInstitutionnel,
     lazy: () =>
       import("./routes/secteur-institutionnel").then((m) => ({ Component: m.default })),

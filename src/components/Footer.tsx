@@ -69,6 +69,7 @@ export function Footer() {
                 { label: "Secteur institutionnel", href: "/secteurs/institutionnel" },
                 { label: "Industriel & Minier", href: "/secteurs/industriel-minier" },
                 { label: "Formules résidentielles", href: "/formules-residentielles" },
+                { label: "Formules professionnelles", href: "/formules-professionnelles" },
                 { label: "À propos", href: "/a-propos" },
                 { label: "Nos références", href: "/references" },
                 { label: "Contact", href: "/contact" },

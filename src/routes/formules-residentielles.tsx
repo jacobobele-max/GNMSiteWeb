@@ -1,76 +1,134 @@
 import { Link } from "react-router-dom";
-import { Home, ChevronRight, ArrowRight, Check, Star } from "lucide-react";
+import { Home, ChevronRight, ArrowRight, Check, Star, ShieldCheck, Leaf, Target, HeartHandshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { TrustStrip } from "@/components/TrustStrip";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
 
+const trustItems = {
+  fr: [
+    { icon: ShieldCheck, title: "Professionnalisme", desc: "Équipes formées et équipements adaptés" },
+    { icon: Leaf, title: "Hygiène", desc: "Respect des normes sanitaires" },
+    { icon: Target, title: "Fiabilité", desc: "Suivi régulier et rapports détaillés" },
+    { icon: HeartHandshake, title: "Partenaire de confiance", desc: "Pour un cadre de vie sain et durable" },
+  ],
+  en: [
+    { icon: ShieldCheck, title: "Professionalism", desc: "Trained teams and suitable equipment" },
+    { icon: Leaf, title: "Hygiene", desc: "Compliant with sanitary standards" },
+    { icon: Target, title: "Reliability", desc: "Regular follow-up and detailed reports" },
+    { icon: HeartHandshake, title: "Trusted partner", desc: "For a healthy, lasting living space" },
+  ],
+} as const;
+
 type Plan = {
   slug: string;
   name: { fr: string; en: string };
-  price: string;
-  period: { fr: string; en: string };
-  tagline: { fr: string; en: string };
+  context: { fr: string; en: string };
+  accroche: { fr: string; en: string };
   bullets: { fr: string; en: string }[];
+  bonus: { fr: string; en: string }[];
+  accent: "green" | "yellow" | "blue";
   featured?: boolean;
 };
 
 const plans: Plan[] = [
   {
-    slug: "essentielle",
-    name: { fr: "Essentielle", en: "Essential" },
-    price: "30 000 F",
-    period: { fr: "/ mois", en: "/ month" },
-    tagline: {
-      fr: "L'entretien courant du foyer, sans y penser.",
-      en: "Everyday home upkeep, without having to think about it.",
+    slug: "nouveau-depart",
+    name: { fr: "Nouveau Départ", en: "Fresh Start" },
+    context: {
+      fr: "Avant emménagement, après travaux, maison longtemps fermée",
+      en: "Before moving in, after renovation work, or a long-closed home",
+    },
+    accroche: {
+      fr: "Repartez à zéro dans un espace sain",
+      en: "Start fresh in a healthy space",
     },
     bullets: [
-      { fr: "Ménage complet, 1×/semaine", en: "Full cleaning, 1×/week" },
-      { fr: "4 passages par mois", en: "4 visits per month" },
+      { fr: "Gros nettoyage complet / décapage", en: "Full deep clean / stripping" },
+      { fr: "Nettoyage des sols, murs, vitres, surfaces", en: "Floors, walls, windows & surfaces cleaned" },
+      { fr: "Élimination des poussières de chantier", en: "Construction dust removal" },
+      { fr: "Désinfection totale des espaces", en: "Full disinfection of all spaces" },
     ],
+    bonus: [{ fr: "Audit / état des lieux gratuit", en: "Free walkthrough audit" }],
+    accent: "green",
   },
   {
-    slug: "confort",
-    name: { fr: "Confort", en: "Comfort" },
-    price: "52 000 F",
-    period: { fr: "/ mois", en: "/ month" },
-    tagline: {
-      fr: "La maison et le linge pris en charge.",
-      en: "The home and the laundry, taken care of.",
+    slug: "serenite",
+    name: { fr: "Sérénité", en: "Serenity" },
+    context: {
+      fr: "Maison occupée, présence de nuisibles, besoin d'assainissement total",
+      en: "Occupied home, pest presence, or full sanitation needs",
+    },
+    accroche: {
+      fr: "Vivez sans stress, on s'occupe de tout",
+      en: "Live stress-free, we handle everything",
     },
     bullets: [
-      { fr: "Ménage complet, 1×/semaine", en: "Full cleaning, 1×/week" },
-      { fr: "Lavage ou repassage, 1×/semaine", en: "Laundry or ironing, 1×/week" },
-      { fr: "8 interventions par mois", en: "8 visits per month" },
+      { fr: "Nettoyage en profondeur", en: "Deep cleaning" },
+      { fr: "Désinsectisation complète + dératisation", en: "Full pest control + rodent control" },
+      { fr: "Après travaux et déménagement", en: "Post-renovation & post-move cleaning" },
+      { fr: "Traitement des zones sensibles", en: "Treatment of sensitive areas" },
+      { fr: "Suivi après l'intervention", en: "Follow-up after the visit" },
     ],
+    bonus: [
+      { fr: "Audit / état des lieux gratuit", en: "Free walkthrough audit" },
+      { fr: "1 grand nettoyage chaque 3 mois + réduction tarifaire", en: "One deep clean every 3 months + discounted rate" },
+    ],
+    accent: "yellow",
     featured: true,
   },
   {
-    slug: "premium",
-    name: { fr: "Premium", en: "Premium" },
-    price: "85 000 F",
-    period: { fr: "/ mois", en: "/ month" },
-    tagline: {
-      fr: "Le service complet, sans compromis.",
-      en: "The full service, no compromise.",
+    slug: "confort-plus",
+    name: { fr: "Confort Plus", en: "Comfort Plus" },
+    context: {
+      fr: "Le pack premium pour un confort total",
+      en: "The premium pack for total comfort",
+    },
+    accroche: {
+      fr: "Votre maison comme un hôtel haut de gamme",
+      en: "Your home, like a high-end hotel",
     },
     bullets: [
-      { fr: "Ménage complet, 1×/semaine", en: "Full cleaning, 1×/week" },
-      { fr: "Lavage et repassage combinés, 2×/semaine", en: "Combined laundry & ironing, 2×/week" },
-      { fr: "12 interventions par mois", en: "12 visits per month" },
-      {
-        fr: "Lutte antivectorielle 1×/trimestre",
-        en: "Pest control treatment once per quarter",
-      },
+      { fr: "Nettoyage en profondeur complet", en: "Complete deep cleaning" },
+      { fr: "Nettoyage de canapé 6 places", en: "6-seat sofa cleaning" },
+      { fr: "Nettoyage des tapis de sol", en: "Rug & carpet cleaning" },
+      { fr: "Désinsectisation + dératisation", en: "Pest control + rodent control" },
+      { fr: "Traitement anti-acariens", en: "Anti-mite treatment" },
     ],
+    bonus: [
+      { fr: "Audit / état des lieux gratuit", en: "Free walkthrough audit" },
+      { fr: "1 grand nettoyage chaque 3 mois + réduction tarifaire", en: "One deep clean every 3 months + discounted rate" },
+    ],
+    accent: "blue",
   },
 ];
+
+const accentClasses: Record<Plan["accent"], { ring: string; badge: string; check: string; accroche: string }> = {
+  green: {
+    ring: "border-brand-green bg-brand-green/5 ring-2 ring-brand-green",
+    badge: "bg-brand-green text-white",
+    check: "text-brand-green",
+    accroche: "text-brand-green-deep",
+  },
+  yellow: {
+    ring: "border-brand-yellow bg-brand-yellow/10 ring-2 ring-brand-yellow",
+    badge: "bg-brand-yellow text-brand-blue-deep",
+    check: "text-brand-blue-deep",
+    accroche: "text-brand-blue-deep",
+  },
+  blue: {
+    ring: "border-brand-blue-deep bg-brand-blue-deep/5 ring-2 ring-brand-blue-deep",
+    badge: "bg-brand-blue-deep text-white",
+    check: "text-brand-blue-deep",
+    accroche: "text-brand-blue-deep",
+  },
+};
 
 const alaCarte = [
   {
@@ -94,21 +152,21 @@ export default function FormulesResidentiellesPage() {
   const { t, lang } = useI18n();
 
   useDocumentHead({
-    title: "Formules résidentielles Essentielle, Confort, Premium | GN&M",
+    title: "Formules résidentielles Nouveau Départ, Sérénité, Confort Plus | GN&M",
     meta: [
       {
         name: "description",
         content:
-          "Ménage, lavage et repassage à domicile à Libreville, Owendo et Akanda : trois formules mensuelles (30 000 à 85 000 F) et des prestations ponctuelles à la carte.",
+          "Nettoyage à domicile à Libreville, Owendo, Akanda et Ntoum : Nouveau Départ, Sérénité et Confort Plus — audit gratuit et devis adapté à votre situation, plus des prestations ponctuelles à la carte.",
       },
       {
         property: "og:title",
-        content: "Formules résidentielles Essentielle, Confort, Premium | GN&M",
+        content: "Formules résidentielles Nouveau Départ, Sérénité, Confort Plus | GN&M",
       },
       {
         property: "og:description",
         content:
-          "Ménage, lavage et repassage à domicile à Libreville, Owendo et Akanda : trois formules mensuelles et des prestations ponctuelles à la carte.",
+          "Nettoyage à domicile à Libreville, Owendo, Akanda et Ntoum : trois formules adaptées à votre situation, avec audit gratuit, et des prestations ponctuelles à la carte.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -133,15 +191,15 @@ export default function FormulesResidentiellesPage() {
           </nav>
 
           <span className="mt-6 inline-block rounded-full bg-brand-green/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-green-deep">
-            {lang === "fr" ? "Chez vous, à Libreville, Owendo & Akanda" : "At home in Libreville, Owendo & Akanda"}
+            {lang === "fr" ? "Chez vous, à Libreville, Owendo, Akanda & Ntoum" : "At home in Libreville, Owendo, Akanda & Ntoum"}
           </span>
           <h1 className="mt-4 font-display text-4xl font-bold text-foreground md:text-5xl">
             {lang === "fr" ? "Formules résidentielles" : "Home plans"}
           </h1>
           <p className="mt-5 max-w-3xl text-[17px] leading-relaxed text-muted-foreground">
             {lang === "fr"
-              ? "Un abonnement mensuel pour l'entretien de votre maison, avec ou sans lavage et repassage. Même équipe, même qualité, à chaque passage."
-              : "A monthly plan for your home's upkeep, with or without laundry and ironing. Same team, same quality, every visit."}
+              ? "Trois formules adaptées à votre situation — emménagement, présence de nuisibles ou confort premium — avec un audit gratuit et un devis sur mesure."
+              : "Three plans adapted to your situation — moving in, pest presence, or premium comfort — with a free walkthrough audit and a tailored quote."}
           </p>
         </div>
       </section>
@@ -149,53 +207,63 @@ export default function FormulesResidentiellesPage() {
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="grid gap-6 md:grid-cols-3">
-            {plans.map((plan) => (
-              <div
-                key={plan.slug}
-                className={`relative flex flex-col rounded-3xl border p-8 shadow-card ${
-                  plan.featured
-                    ? "border-brand-green bg-brand-green/5 ring-2 ring-brand-green"
-                    : "border-border bg-card"
-                }`}
-              >
-                {plan.featured && (
-                  <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1 rounded-full bg-brand-green px-4 py-1 text-xs font-bold text-white shadow-brand">
-                    <Star size={12} className="fill-white" />
-                    {lang === "fr" ? "Le plus choisi" : "Most popular"}
-                  </span>
-                )}
-                <h2 className="font-display text-2xl font-bold text-foreground">
-                  {plan.name[lang]}
-                </h2>
-                <p className="mt-2 text-sm text-muted-foreground">{plan.tagline[lang]}</p>
-                <div className="mt-6 flex items-baseline gap-1.5">
-                  <span className="font-display text-4xl font-bold text-brand-green-deep">
-                    {plan.price}
-                  </span>
-                  <span className="text-sm text-muted-foreground">{plan.period[lang]}</span>
-                </div>
-                <ul className="mt-6 flex-1 space-y-3">
-                  {plan.bullets.map((b, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
-                      <Check size={18} className="mt-0.5 shrink-0 text-brand-green" />
-                      <span>{b[lang]}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  asChild
-                  className={`mt-8 w-full rounded-full ${
-                    plan.featured
-                      ? "bg-brand-green text-white hover:bg-brand-green-deep"
-                      : "bg-brand-blue-deep text-white hover:opacity-90"
+            {plans.map((plan) => {
+              const accent = accentClasses[plan.accent];
+              return (
+                <div
+                  key={plan.slug}
+                  className={`relative flex flex-col rounded-3xl border p-8 shadow-card ${
+                    plan.featured ? accent.ring : "border-border bg-card"
                   }`}
                 >
-                  <a href={DEVIS_URL} target="_blank" rel="noopener noreferrer">
-                    {t("cta.quote")} <ArrowRight className="ml-2" size={16} />
-                  </a>
-                </Button>
-              </div>
-            ))}
+                  {plan.featured && (
+                    <span
+                      className={`absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1 rounded-full px-4 py-1 text-xs font-bold shadow-brand ${accent.badge}`}
+                    >
+                      <Star size={12} className="fill-current" />
+                      {lang === "fr" ? "Le plus choisi" : "Most popular"}
+                    </span>
+                  )}
+                  <h2 className="font-display text-2xl font-bold text-foreground">
+                    {plan.name[lang]}
+                  </h2>
+                  <p className="mt-2 text-sm text-muted-foreground">{plan.context[lang]}</p>
+                  <p className={`mt-1 font-display text-[15px] font-bold ${accent.accroche}`}>
+                    {plan.accroche[lang]}
+                  </p>
+                  <ul className="mt-6 flex-1 space-y-3">
+                    {plan.bullets.map((b, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
+                        <Check size={18} className={`mt-0.5 shrink-0 ${accent.check}`} />
+                        <span>{b[lang]}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 border-t border-border pt-5">
+                    <span
+                      className={`inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide ${accent.badge}`}
+                    >
+                      {lang === "fr" ? "Bonus" : "Bonus"}
+                    </span>
+                    <ul className="mt-2 space-y-1">
+                      {plan.bonus.map((b, i) => (
+                        <li key={i} className="text-sm font-semibold text-muted-foreground">
+                          {b[lang]}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Button
+                    asChild
+                    className={`mt-8 w-full rounded-full hover:opacity-90 ${accent.badge}`}
+                  >
+                    <a href={DEVIS_URL} target="_blank" rel="noopener noreferrer">
+                      {t("cta.quote")} <ArrowRight className="ml-2" size={16} />
+                    </a>
+                  </Button>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -241,6 +309,8 @@ export default function FormulesResidentiellesPage() {
           </div>
         </div>
       </section>
+
+      <TrustStrip items={trustItems[lang]} />
 
       <Footer />
       <QuoteChatbot />

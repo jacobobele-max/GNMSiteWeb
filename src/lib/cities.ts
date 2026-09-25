@@ -29,7 +29,7 @@ export const cities: CityContent[] = [
       "Nettoyage de bureaux, désinfection et espaces verts à Libreville. Siège de Gabon Nettoyage & Multiservices, actif depuis 2020.",
     h1: "Nettoyage professionnel à Libreville",
     presence:
-      "Gabon Nettoyage & Multiservices a son siège à Libreville, Cité Damas, où notre activité a démarré en janvier 2020. C'est ici que nous intervenons sur l'ensemble de nos huit domaines de service : nettoyage de bureaux et résidences, désinfection, entretien d'espaces verts, maintenance et multiservices. Nous accompagnons aussi bien de grandes structures institutionnelles que les particuliers des quartiers d'Akanda, Owendo et du centre-ville, avec nos formules résidentielles Essentielle, Confort et Premium.",
+      "Gabon Nettoyage & Multiservices a son siège à Libreville, Cité Damas, où notre activité a démarré en janvier 2020. C'est ici que nous intervenons sur l'ensemble de nos huit domaines de service : nettoyage de bureaux et résidences, désinfection, entretien d'espaces verts, maintenance et multiservices. Nous accompagnons aussi bien de grandes structures institutionnelles que les particuliers des quartiers d'Akanda, Owendo, Ntoum et du centre-ville, avec nos formules résidentielles Nouveau Départ, Sérénité et Confort Plus.",
     intro:
       "Basé Cité Damas, notre siège social couvre l'ensemble du Grand Libreville : bureaux, résidences, commerces et sites institutionnels. C'est ici que sont coordonnées l'ensemble de nos interventions multi-villes.",
     highlight:

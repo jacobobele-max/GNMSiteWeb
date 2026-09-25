@@ -7,6 +7,7 @@ export const ROUTE_PATHS = {
   notreExpertise: "/notre-expertise",
   aPropos: "/a-propos",
   formulesResidentielles: "/formules-residentielles",
+  formulesProfessionnelles: "/formules-professionnelles",
   secteurInstitutionnel: "/secteurs/institutionnel",
   secteurIndustrielMinier: "/secteurs/industriel-minier",
   secteurParticuliers: "/secteurs/particuliers",
