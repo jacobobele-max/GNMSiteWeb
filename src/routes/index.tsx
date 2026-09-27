@@ -3,6 +3,7 @@ import { HeroCarousel } from "@/components/HeroCarousel";
 import { StatsBand } from "@/components/StatsBand";
 import { Services } from "@/components/Services";
 import { Philosophy } from "@/components/Philosophy";
+import { HowItWorks } from "@/components/HowItWorks";
 import { Testimonials } from "@/components/Testimonials";
 import { TrustedBy } from "@/components/TrustedBy";
 import { Gallery } from "@/components/Gallery";
@@ -41,6 +42,7 @@ export default function Index() {
       <TrustedBy />
       <Services />
       <Philosophy />
+      <HowItWorks />
       <Gallery />
       <Testimonials />
       <Footer />

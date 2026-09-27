@@ -165,6 +165,9 @@ export function Footer() {
             <span className="text-brand-yellow">éco-responsable par engagement</span>
           </p>
         </div>
+        <p className="mt-3 text-center text-[11px] text-white/45 md:text-left">
+          GN&amp;M SUARL · RCCM GA-LBV-01-2020-B13-00016 · NIF 49308 C
+        </p>
       </div>
     </footer>
   );
