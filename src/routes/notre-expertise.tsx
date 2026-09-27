@@ -23,7 +23,7 @@ import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL, SITE_URL } from "@/lib/constants";
 import { IconPointsSection } from "@/components/IconPointsSection";
-import hero2 from "@/assets/hero-2.webp";
+import hero3 from "@/assets/hero-3.webp";
 import work2 from "@/assets/work-2.webp";
 import work3 from "@/assets/work-3.webp";
 import work5 from "@/assets/work-5.webp";
@@ -241,7 +241,7 @@ export default function ExpertisePage() {
       {/* Hero */}
       <section className="relative pt-28 pb-20">
         <div className="absolute inset-0">
-          <img src={hero2} alt="" className="size-full object-cover" />
+          <img src={hero3} alt="" className="size-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-deep/90 via-brand-blue-deep/75 to-brand-green/60" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 md:px-8">

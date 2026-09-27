@@ -1,6 +1,6 @@
 import { Leaf, ShieldCheck, HeartHandshake, Award } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import hero2 from "@/assets/hero-2.webp";
+import work9 from "@/assets/work-9.webp";
 
 const pillars = [
   {
@@ -35,8 +35,8 @@ export function Philosophy() {
           <div className="absolute -bottom-6 -right-6 size-48 rounded-full bg-brand-blue/30 blur-3xl" />
           <div className="relative overflow-hidden rounded-3xl shadow-brand">
             <img
-              src={hero2}
-              alt="Produits écologiques utilisés par Gabon Nettoyage"
+              src={work9}
+              alt="Produits et équipements écologiques utilisés par Gabon Nettoyage"
               className="h-full w-full object-cover"
               loading="lazy"
               width={1920}

@@ -71,6 +71,7 @@ export function Footer() {
                 { label: "Formules résidentielles", href: "/formules-residentielles" },
                 { label: "Formules professionnelles", href: "/formules-professionnelles" },
                 { label: "Gabon Clean", href: "/gabon-clean" },
+                { label: "Recrutement", href: "/recrutement" },
                 { label: "À propos", href: "/a-propos" },
                 { label: "Nos références", href: "/references" },
                 { label: "Contact", href: "/contact" },

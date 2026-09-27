@@ -45,6 +45,7 @@ const navItems: NavItem[] = [
   },
   { key: "nav.gabonClean", href: "/gabon-clean" },
   { key: "nav.news", href: "/actualites" },
+  { key: "nav.recrutement", href: "/recrutement" },
 
   { key: "nav.contact", href: "/contact" },
 ];

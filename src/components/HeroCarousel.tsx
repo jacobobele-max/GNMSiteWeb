@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 import { DEVIS_URL } from "@/lib/constants";
 import hero1 from "@/assets/hero-1.webp";
-import hero2 from "@/assets/hero-2.webp";
 import hero3 from "@/assets/hero-3.webp";
+import work15 from "@/assets/work-15.webp";
 
 const slides = [
   {
@@ -14,7 +14,7 @@ const slides = [
     keys: { eyebrow: "hero.eyebrow.1", title: "hero.title.1", subtitle: "hero.sub.1" },
   },
   {
-    image: hero2,
+    image: work15,
     keys: { eyebrow: "hero.eyebrow.2", title: "hero.title.2", subtitle: "hero.sub.2" },
   },
   {

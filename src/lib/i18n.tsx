@@ -18,6 +18,7 @@ const dict: Dict = {
   "nav.formulas.residentielles": { fr: "Formules résidentielles", en: "Home plans" },
   "nav.formulas.professionnelles": { fr: "Formules professionnelles", en: "Business plans" },
   "nav.gabonClean": { fr: "Gabon Clean", en: "Gabon Clean" },
+  "nav.recrutement": { fr: "Recrutement", en: "Careers" },
   "nav.news": { fr: "Actualités", en: "News" },
   "nav.recycling": { fr: "Recyclage", en: "Recycling" },
   "nav.contact": { fr: "Contact", en: "Contact" },
@@ -92,6 +93,9 @@ const dict: Dict = {
 
   // Trusted
   "trusted.title": { fr: "Ils nous font confiance", en: "They trust us" },
+  "stats.since": { fr: "Depuis", en: "Since" },
+  "stats.cities": { fr: "Villes couvertes", en: "Cities covered" },
+  "stats.agents": { fr: "Agents formés", en: "Trained agents" },
 
   // Chatbot
   "chat.open": { fr: "Demander un devis", en: "Request a quote" },

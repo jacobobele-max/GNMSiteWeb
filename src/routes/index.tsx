@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { StatsBand } from "@/components/StatsBand";
 import { Services } from "@/components/Services";
 import { Philosophy } from "@/components/Philosophy";
 import { Testimonials } from "@/components/Testimonials";
@@ -36,6 +37,7 @@ export default function Index() {
       <Navbar />
       <SocialFloat />
       <HeroCarousel />
+      <StatsBand />
       <TrustedBy />
       <Services />
       <Philosophy />
