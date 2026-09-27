@@ -3,12 +3,12 @@ import { useLocation } from "react-router-dom";
 import { SITE_URL } from "@/lib/constants";
 
 type MetaTag = { name?: string; property?: string; content: string };
-type HeadConfig = { title: string; meta?: MetaTag[] };
+type HeadConfig = { title: string; meta?: MetaTag[]; jsonLd?: object | object[] };
 
 // Client-side stand-in for TanStack Start's route `head()` — this app has no
 // SSR, so tags are only ever present after the first render (no SEO benefit,
 // just correct <title>/meta while navigating client-side).
-export function useDocumentHead({ title, meta = [] }: HeadConfig) {
+export function useDocumentHead({ title, meta = [], jsonLd }: HeadConfig) {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -40,10 +40,21 @@ export function useDocumentHead({ title, meta = [] }: HeadConfig) {
     canonical.setAttribute("href", `${SITE_URL}${pathname}`);
     if (createdCanonical) created.push(canonical);
 
+    if (jsonLd) {
+      const entries = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+      for (const entry of entries) {
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.text = JSON.stringify(entry);
+        document.head.appendChild(script);
+        created.push(script);
+      }
+    }
+
     return () => {
       document.title = previousTitle;
       created.forEach((el) => el.remove());
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [title, JSON.stringify(meta), pathname]);
+  }, [title, JSON.stringify(meta), JSON.stringify(jsonLd), pathname]);
 }

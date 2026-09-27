@@ -17,6 +17,7 @@ import { IconPointsSection } from "@/components/IconPointsSection";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL, SITE_URL } from "@/lib/constants";
+import { buildBreadcrumbList } from "@/lib/schema";
 import hero3 from "@/assets/hero-3.webp";
 import work23 from "@/assets/work-23.webp";
 import work22 from "@/assets/work-22.webp";
@@ -173,6 +174,10 @@ export default function SecteurInstitutionnelPage() {
       { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
       { name: "twitter:card", content: "summary" },
     ],
+    jsonLd: buildBreadcrumbList([
+      { name: "Accueil", path: "/" },
+      { name: c.crumb, path: "/secteurs/institutionnel" },
+    ]),
   });
 
   return (

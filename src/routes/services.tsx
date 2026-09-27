@@ -10,6 +10,7 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { categories, allServices } from "@/lib/services-catalog";
+import { buildBreadcrumbList } from "@/lib/schema";
 
 export default function ServicesPage() {
   useDocumentHead({
@@ -28,6 +29,10 @@ export default function ServicesPage() {
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    jsonLd: buildBreadcrumbList([
+      { name: "Accueil", path: "/" },
+      { name: "Services", path: "/services" },
+    ]),
   });
 
   const { t, lang } = useI18n();

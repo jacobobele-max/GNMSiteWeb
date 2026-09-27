@@ -16,6 +16,7 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { IconPointsSection } from "@/components/IconPointsSection";
 import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
+import { buildBreadcrumbList } from "@/lib/schema";
 import { DEVIS_URL, SITE_URL } from "@/lib/constants";
 import work12 from "@/assets/work-12.webp";
 import work9 from "@/assets/work-9.webp";
@@ -164,6 +165,10 @@ export default function SecteurIndustrielMinierPage() {
       { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
       { name: "twitter:card", content: "summary" },
     ],
+    jsonLd: buildBreadcrumbList([
+      { name: "Accueil", path: "/" },
+      { name: c.crumb, path: "/secteurs/industriel-minier" },
+    ]),
   });
 
   return (

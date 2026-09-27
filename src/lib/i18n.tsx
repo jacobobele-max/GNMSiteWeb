@@ -96,6 +96,7 @@ const dict: Dict = {
   "stats.since": { fr: "Depuis", en: "Since" },
   "stats.cities": { fr: "Villes couvertes", en: "Cities covered" },
   "stats.agents": { fr: "Agents formés", en: "Trained agents" },
+  "stats.hours": { fr: "Intervention", en: "Available" },
 
   // Chatbot
   "chat.open": { fr: "Demander un devis", en: "Request a quote" },

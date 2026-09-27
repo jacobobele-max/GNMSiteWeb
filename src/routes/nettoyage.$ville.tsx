@@ -10,6 +10,7 @@ import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
 import { cities, getCityBySlug, type CityContent } from "@/lib/cities";
 import { categories } from "@/lib/services-catalog";
+import { buildBreadcrumbList, buildLocalBusiness } from "@/lib/schema";
 
 export default function NettoyageVilleRoute() {
   const { ville } = useParams<{ ville: string }>();
@@ -61,6 +62,16 @@ function CityPage({ city }: { city: CityContent }) {
       { property: "og:description", content: city.metaDescription },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+    ],
+    jsonLd: [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: city.name, path: `/nettoyage/${city.slug}` },
+      ]),
+      buildLocalBusiness({
+        description: city.metaDescription,
+        areaServed: city.name,
+      }),
     ],
   });
 

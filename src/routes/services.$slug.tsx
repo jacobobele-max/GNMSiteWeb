@@ -10,6 +10,7 @@ import { useI18n } from "@/lib/i18n";
 import { useDocumentHead } from "@/lib/use-document-head";
 import { DEVIS_URL } from "@/lib/constants";
 import { findService, type Service, type Category } from "@/lib/services-catalog";
+import { buildBreadcrumbList } from "@/lib/schema";
 
 export default function ServiceDetailRoute() {
   const { slug } = useParams<{ slug: string }>();
@@ -59,6 +60,11 @@ function ServiceDetailPage({ service }: { service: Service & { category: Categor
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
+    jsonLd: buildBreadcrumbList([
+      { name: "Accueil", path: "/" },
+      { name: "Services", path: "/services" },
+      { name: service.name.fr, path: `/services/${service.slug}` },
+    ]),
   });
 
   return (
