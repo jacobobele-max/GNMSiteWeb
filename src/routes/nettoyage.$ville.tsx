@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { Home, ChevronRight, ArrowRight, Check } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { TrustedBy } from "@/components/TrustedBy";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -197,6 +198,7 @@ function CityPage({ city }: { city: CityContent }) {
         </div>
       </section>
 
+      <TrustedBy />
       <Footer />
       <QuoteChatbot />
       <WhatsAppFloat />

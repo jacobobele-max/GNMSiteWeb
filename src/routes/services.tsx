@@ -4,6 +4,7 @@ import { Search, Check, ArrowRight, Clock, Users, Wrench, Leaf } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { TrustedBy } from "@/components/TrustedBy";
 import { SocialFloat } from "@/components/SocialFloat";
 import { QuoteChatbot } from "@/components/QuoteChatbot";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -204,6 +205,7 @@ export default function ServicesPage() {
         </div>
       </div>
 
+      <TrustedBy />
       <Footer />
       <QuoteChatbot />
       <WhatsAppFloat />

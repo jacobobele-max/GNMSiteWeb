@@ -1,5 +1,6 @@
 // Numéro Gabon (+241) : 062 42 77 78 → format international sans le 0 initial.
-const WHATSAPP_URL = "https://wa.me/24162427778";
+const WHATSAPP_URL =
+  "https://wa.me/24162427778?text=Bonjour%20GN%26M%2C%20je%20souhaite%20un%20devis%20pour%20";
 
 export function WhatsAppFloat() {
   return (
